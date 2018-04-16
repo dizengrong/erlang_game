@@ -1,0 +1,1 @@
+erl -pa ebin -pa deps/erlang_protobuffs/ebin -s gen_protocol -s init stop

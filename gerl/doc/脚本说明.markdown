@@ -1,0 +1,16 @@
+脚本说明
+=====
+
+脚本都放在scripts/目录下
+以cmd_开头的脚本为在windows下运行的，以sh_开头的则为在linux下运行的
+脚本都要在项目的根目录下执行，如在windows下这样：scripts\cmd_start_dev.bat 在Linux下则为scripts/sh_start_dev.sh
+
+### 各个脚本说明
+
+* cmd_create_table.bat：创建数据库定义的脚本
+	* cmd_create_table.bat -one ：生成一个数据库定义文件：create_db.sql和一个数据定义头文件db_tables.hrl
+	* cmd_create_table.bat -all ：生成一个数据库定义文件：create_db.sql和多个数据定义头文件db_table_xxx.hrl
+* cmd_gen_protocol.bat：根据proto目录下的.proto文件生成协议头文件和protocol_code.erl
+* cmd_gen_record_fields.bat：对数据定义头文件include/db_tables.hrl里的所有record生成字段名和字段索引映射函数
+* cmd_start_dev.bat：windows下运行开发模式下的服务器
+* sh_start_dev.sh：Linux下运行开发模块下的服务器

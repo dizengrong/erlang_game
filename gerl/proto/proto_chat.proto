@@ -1,0 +1,20 @@
+//$$begin_code_define
+//{ms_chat, 	  12000}
+//{mc_chat, 	  12000}
+//$$end_code_define
+
+// ========== 聊天协议 ========== 
+
+// ========== 聊天
+message ms_chat {
+	option int32  channel  = 1;	// 频道id(具体定义参见:chat.hrl)
+	option string receiver = 2;	// 接收方的玩家名(对于私聊有效)
+	option string content  = 3;	// 消息内容
+}
+message mc_chat {
+	option int32       	 ret_code = 1 [default=0];//具体定义参见:chat.hrl中的CHAT_CODE_XXX
+	option int32  		 channel  = 2;	// 频道id(具体定义参见:chat.hrl)
+	option string 		 content  = 3;	// 消息内容
+	option r_chat_entity sender   = 4;	// 发起者的信息
+
+}

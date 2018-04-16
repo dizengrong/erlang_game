@@ -1,0 +1,3466 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"log",
+				"log_item"
+			],
+			[
+				"li",
+				"lifetime_index"
+			],
+			[
+				"rem",
+				"remove_in_map_role"
+			],
+			[
+				"add",
+				"add_in_map_role"
+			],
+			[
+				"map",
+				"map_dict"
+			],
+			[
+				"lo",
+				"location"
+			],
+			[
+				"Loc",
+				"Location"
+			],
+			[
+				"is_",
+				"is_multi_keys"
+			],
+			[
+				"Ets",
+				"EtsRec"
+			],
+			[
+				"rec",
+				"rec_transform_db_to_cache"
+			],
+			[
+				"tra",
+				"rec_transform_cache_to_db"
+			],
+			[
+				"gt",
+				"get_dirty_tab"
+			],
+			[
+				"R",
+				"RoleId"
+			],
+			[
+				"a",
+				"amount"
+			],
+			[
+				"Erro",
+				"ErrCode"
+			],
+			[
+				"E",
+				"ErrCode"
+			],
+			[
+				"get",
+				"get_bag_capacity"
+			],
+			[
+				"Cre",
+				"CreateParams"
+			],
+			[
+				"roldi",
+				"role_bag_dict"
+			],
+			[
+				"Add",
+				"Add2"
+			],
+			[
+				"Ex",
+				"ExistItem#r_item"
+			],
+			[
+				"moudl",
+				"MODULE"
+			],
+			[
+				"Ne",
+				"NewMaxId"
+			],
+			[
+				"is",
+				"is_equiped"
+			],
+			[
+				"L",
+				"Location"
+			],
+			[
+				"LOC",
+				"ITEM_LOCATION_EMBE"
+			],
+			[
+				"max",
+				"max_item_id"
+			],
+			[
+				"moud",
+				"MODULE"
+			],
+			[
+				"Max",
+				"MaxItemId"
+			],
+			[
+				"_",
+				"_IF"
+			],
+			[
+				"Ac",
+				"Acc2"
+			],
+			[
+				"fi",
+				"filter_by_type_id"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"end",
+				"end_time"
+			],
+			[
+				"itemid",
+				"item_id"
+			],
+			[
+				"Eq",
+				"EquipedIndexs"
+			],
+			[
+				"id",
+				"item_id"
+			],
+			[
+				"db",
+				"db_role"
+			],
+			[
+				"chat",
+				"chat_api"
+			],
+			[
+				"CHA",
+				"CHANNEL_WORLD"
+			],
+			[
+				"S",
+				"SenderId"
+			],
+			[
+				"Send",
+				"SenderEntityRec"
+			],
+			[
+				"ets",
+				"ets_online"
+			],
+			[
+				"Sender",
+				"SenderId"
+			],
+			[
+				"Cha",
+				"Channel"
+			],
+			[
+				"Ch",
+				"Channel"
+			],
+			[
+				"obje",
+				"OBJECT_ROLE"
+			],
+			[
+				"role",
+				"role_leave"
+			],
+			[
+				"Obj",
+				"ObjectId"
+			],
+			[
+				"roleid",
+				"role_id"
+			],
+			[
+				"Npc",
+				"NpcUid"
+			],
+			[
+				"Ob",
+				"ObjectId"
+			],
+			[
+				"N",
+				"NpcRec"
+			],
+			[
+				"Ma",
+				"MapNode"
+			],
+			[
+				"Map",
+				"MapKey"
+			],
+			[
+				"util",
+				"util_str"
+			],
+			[
+				"ato",
+				"atom_to_list"
+			],
+			[
+				"Fiel",
+				"IndexField"
+			],
+			[
+				"In",
+				"IndexField"
+			],
+			[
+				"Hr",
+				"HRL_FILES"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"Ke",
+				"KeyVals2"
+			],
+			[
+				"Keyv",
+				"KeyVals1"
+			],
+			[
+				"KeyV",
+				"KeyVals2"
+			],
+			[
+				"Msg",
+				"MsgCode"
+			],
+			[
+				"mc_",
+				"mc_map_leave"
+			],
+			[
+				"Re",
+				"RecTag"
+			],
+			[
+				"prot",
+				"protocol_code_head"
+			],
+			[
+				"com",
+				"com"
+			],
+			[
+				"pro",
+				"protocol_code"
+			],
+			[
+				"Bin",
+				"Binary"
+			],
+			[
+				"Role",
+				"RoleId"
+			],
+			[
+				"rolei",
+				"role_id"
+			],
+			[
+				"und",
+				"undefined"
+			],
+			[
+				"acc",
+				"account_srv"
+			],
+			[
+				"look",
+				"lookup_from_cache"
+			],
+			[
+				"rand",
+				"random_between"
+			],
+			[
+				"Tab",
+				"TableName"
+			],
+			[
+				"ex",
+				"export	-export"
+			],
+			[
+				"loo",
+				"lookup"
+			],
+			[
+				"c",
+				"customer_code"
+			],
+			[
+				"TAb",
+				"TableName"
+			],
+			[
+				"gerl",
+				"gerl_setting"
+			],
+			[
+				"St",
+				"State"
+			],
+			[
+				"re",
+				"required"
+			],
+			[
+				"ma",
+				"MAIN_APP"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/db/db_table_item.erl",
+			"settings":
+			{
+				"buffer_size": 1558,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/map_srv/role_dict.erl",
+			"settings":
+			{
+				"buffer_size": 2508,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/map_srv/logic/role_bag_dict.erl",
+			"settings":
+			{
+				"buffer_size": 8700,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/map_srv/logic/role_bag.erl",
+			"settings":
+			{
+				"buffer_size": 8415,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/util/util_user_log.erl",
+			"settings":
+			{
+				"buffer_size": 725,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 991,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/db/gerl_db1.erl",
+			"settings":
+			{
+				"buffer_size": 4247,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tool/create_table.erl",
+			"settings":
+			{
+				"buffer_size": 3663,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/amnesia/src/amnesia.erl",
+			"settings":
+			{
+				"buffer_size": 74685,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/util/util_list.erl",
+			"settings":
+			{
+				"buffer_size": 1115,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/cfg_user_log.erl",
+			"settings":
+			{
+				"buffer_size": 454,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "rebar.config",
+			"settings":
+			{
+				"buffer_size": 1138,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/map_srv/pp/pp_map.erl",
+			"settings":
+			{
+				"buffer_size": 1458,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/chat.hrl",
+			"settings":
+			{
+				"buffer_size": 948,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "deps/colorize/src/colorize.erl",
+			"settings":
+			{
+				"buffer_size": 5238,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/cmd_gen_protocol.bat",
+			"settings":
+			{
+				"buffer_size": 73,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tool/gen_protocol.erl",
+			"settings":
+			{
+				"buffer_size": 2911,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/protocol_code.erl",
+			"settings":
+			{
+				"buffer_size": 1443,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/center_srv/user_log_srv.erl",
+			"settings":
+			{
+				"buffer_size": 1185,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/util/util_str.erl",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/util/util_time.erl",
+			"settings":
+			{
+				"buffer_size": 595,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/db/db_table_user_log.erl",
+			"settings":
+			{
+				"buffer_size": 949,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/map_srv/logic/item_life.erl",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/db/db_table_role.erl",
+			"settings":
+			{
+				"buffer_size": 2443,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/db/db_conf.erl",
+			"settings":
+			{
+				"buffer_size": 231,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/map_srv/role_dict_config.erl",
+			"settings":
+			{
+				"buffer_size": 354,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/fight.hrl",
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/util/util_item.erl",
+			"settings":
+			{
+				"buffer_size": 1827,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/cfg_item.erl",
+			"settings":
+			{
+				"buffer_size": 486,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/map_srv/map_event.erl",
+			"settings":
+			{
+				"buffer_size": 1557,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/map_srv/logic/role_loop.erl",
+			"settings":
+			{
+				"buffer_size": 375,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/map_srv/mod_minheap.erl",
+			"settings":
+			{
+				"buffer_size": 9341,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/map_srv/map_srv.erl",
+			"settings":
+			{
+				"buffer_size": 3436,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/log.hrl",
+			"settings":
+			{
+				"buffer_size": 1019,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/map_srv/map_dict.erl",
+			"settings":
+			{
+				"buffer_size": 3817,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/map.hrl",
+			"settings":
+			{
+				"buffer_size": 1898,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/item.hrl",
+			"settings":
+			{
+				"buffer_size": 2527,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/cache/cache_config.erl",
+			"settings":
+			{
+				"buffer_size": 2574,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/bag.hrl",
+			"settings":
+			{
+				"buffer_size": 117,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/error_code.hrl",
+			"settings":
+			{
+				"buffer_size": 168,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Erlang/rebar.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 288.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"ssj",
+				"Set Syntax: Java"
+			],
+			[
+				"g",
+				"Snippet: gen_server Callbacks"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Enable Package"
+			],
+			[
+				"ssc",
+				"Set Syntax: C++"
+			],
+			[
+				"insert",
+				"InsertDate: Custom"
+			],
+			[
+				"date",
+				"InsertDate: Custom"
+			],
+			[
+				"sse",
+				"Set Syntax: Erlang"
+			],
+			[
+				"Snippet: ge",
+				"Snippet: gen_server Callbacks"
+			],
+			[
+				"packe",
+				"Package Control: Enable Package"
+			],
+			[
+				"Pack",
+				"Package Control: Enable Package"
+			],
+			[
+				"pa",
+				"Package Control: Enable Package"
+			],
+			[
+				"gens",
+				"Snippet: gen_server Callbacks"
+			]
+		],
+		"width": 576.0
+	},
+	"console":
+	{
+		"height": 236.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/dzr/gerl",
+		"/E/dzr/gerl/config",
+		"/E/dzr/gerl/run_setting",
+		"/E/dzr/gerl/scripts",
+		"/E/dzr/gerl/src",
+		"/E/dzr/gerl/src/gateway",
+		"/E/dzr/gerl/src/map_srv",
+		"/E/dzr/gerl/src/map_srv/logic",
+		"/E/dzr/gerl/src/map_srv/map_model",
+		"/E/dzr/gerl/src/map_srv/pp",
+		"/E/dzr/gerl/test",
+		"/E/dzr/gerl/tool"
+	],
+	"file_history":
+	[
+		"/E/dzr/gerl/lib/amnesia/src/drivers/mysql/mysql_drv.erl",
+		"/D/Dropbox/code/gerl/include/db_table_item.hrl",
+		"/D/Dropbox/code/gerl/create_db.sql",
+		"/D/Dropbox/code/gerl/scripts/cmd_start_dev.bat",
+		"/D/Dropbox/code/gerl/scripts/cmd_gen_record_fields.bat",
+		"/D/Dropbox/code/gerl/scripts/cmd_create_table.bat",
+		"/D/Dropbox/code/gerl/scripts/cmd_dialyzer.bat",
+		"/D/Dropbox/code/gerl/run_setting/gerl_setting1.erl.sample",
+		"/D/Dropbox/code/gerl/run_setting/gerl_setting.erl",
+		"/D/Dropbox/code/gerl/doc/用户日志设计.markdown",
+		"/D/Dropbox/code/gerl/TODO",
+		"/D/Dropbox/code/gerl/README.md",
+		"/D/Dropbox/code/gerl/src/util/util_random.erl",
+		"/D/Dropbox/code/gerl/include/hero.hrl",
+		"/D/Dropbox/code/gerl/deps/erlang_protobuffs/deps/meck/src/meck_history.erl",
+		"/D/Dropbox/code/gerl/deps/erlang_protobuffs/deps/meck/test/meck_history_tests.erl",
+		"/E/Job/jooyou/s1/s1_server/app/game/map/src/mod/mod_mirror_rnkm.erl.mine",
+		"/E/GitHub/django-xadmin/demo_app/manage.py",
+		"/E/GitHub/django-xadmin/demo_app/app/adminx.py",
+		"/E/GitHub/django-xadmin/demo_app/app/models.py",
+		"/D/Dropbox/code/gerl/run_setting/gerl_setting1.erl",
+		"/D/xampp/mysql/README",
+		"/D/Dropbox/code/gerl/src/db/gerl_db1.erl",
+		"/D/Dropbox/code/gerl/config/cfg_user_log.erl",
+		"/D/Dropbox/code/gerl/doc/道具设计.markdown",
+		"/E/GitHub/dzr_code/job_code/Sanguo_X_server/src/system/mod_user_log.erl",
+		"/D/Dropbox/code/gerl/rebar.config",
+		"/D/Dropbox/code/gerl/src/db/db.erl",
+		"/D/Dropbox/code/gerl/src/center_srv/online_srv.erl",
+		"/D/Dropbox/code/gerl/src/center_srv/gerl_center_srv_sup.erl",
+		"/D/Dropbox/code/gerl/src/center_srv/gerl_center_srv_app.erl",
+		"/D/Dropbox/code/gerl/ebin/gerl_center_srv.app",
+		"/D/Dropbox/code/gerl/tool/create_table.erl",
+		"/D/Dropbox/code/gerl/include/db.hrl",
+		"/D/Dropbox/code/gerl/src/cache/db_role.erl",
+		"/D/Dropbox/code/gerl/src/db/db_table_rune.erl",
+		"/E/GitHub/ChicagoBoss/src/boss/boss_load.erl",
+		"/E/GitHub/ChicagoBoss/src/boss/boss_lang.erl",
+		"/E/GitHub/dzr_code/job_code/Sanguo_X_server/src/system/items/mod_items.erl",
+		"/E/GitHub/dzr_code/job_code/Sanguo_X_server/src/system/items/lib_items.erl",
+		"/E/GitHub/dzr_code/job_code/Sanguo_X_server/src/system/mod_economy.erl",
+		"/E/GitHub/dzr_code/job_code/Sanguo_X_server/src/system/items/base_items.erl",
+		"/E/GitHub/dzr_code/job_code/Sanguo_X_server/src/protocol/pt.erl",
+		"/E/GitHub/dzr_code/job_code/Sanguo_X_server/src/util/gen_timer.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/msg_delay.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/npc_fsm.erl",
+		"/D/Dropbox/code/gerl/include/spec_type.hrl",
+		"/D/Dropbox/code/gerl/src/util/util_time.erl",
+		"/D/Dropbox/code/gerl/src/util/util_math.erl",
+		"/D/Dropbox/code/gerl/src/cache/gen_cache.erl",
+		"/D/Dropbox/code/gerl/src/util/util_map.erl",
+		"/D/Dropbox/code/gerl/lib/amnesia/src/amnesia.erl",
+		"/D/Dropbox/code/gerl/include/gen_cache.hrl",
+		"/D/Dropbox/code/gerl/src/gateway/role_socket.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/mod_astar_pathfinding.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/npc.erl",
+		"/D/Dropbox/code/gerl/deps/ranch/test/notify_and_wait_protocol.erl",
+		"/D/Dropbox/code/gerl/config/maps/cfg_map.erl",
+		"/D/Dropbox/code/gerl/config/cfg_npc.erl",
+		"/C/Users/dell/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/D/Dropbox/code/gerl/include/common.hrl",
+		"/D/Dropbox/code/gerl/include/map.hrl",
+		"/D/Dropbox/code/gerl/include/db_tables.hrl",
+		"/D/Dropbox/code/gerl/src/cache/db_account.erl",
+		"/D/Dropbox/code/gerl/include/gen_cache.hrl.back",
+		"/D/Dropbox/code/gerl/src/cache/gen_cache.erl.back",
+		"/D/Dropbox/code/gerl/tool/gen_gerl_setting.erl",
+		"/D/Dropbox/code/gerl/log/error.log",
+		"/D/Dropbox/code/gerl/deps/erlang_protobuffs/test/erlang_protobuffs_SUITE_data/extend_in_reserved_range.proto",
+		"/D/Dropbox/code/gerl/erl_crash.dump",
+		"/D/Dropbox/code/gerl/deps/erlang_protobuffs/test/erlang_protobuffs_SUITE_data/extend_out_of_range.proto",
+		"/D/Dropbox/code/gerl/deps/erlang_protobuffs/test/erlang_protobuffs_SUITE_data/proto/import/import_target.proto",
+		"/D/Dropbox/code/gerl/include/db_table_account.hrl",
+		"/D/Dropbox/code/gerl/include/db_table_role.hrl",
+		"/D/Dropbox/code/gerl/src/util/util_list.erl",
+		"/D/Dropbox/code/gerl/include/npc.hrl",
+		"/D/Dropbox/code/gerl/deps/erlang_protobuffs/deps/meck/src/meck_proc.erl",
+		"/D/Dropbox/code/gerl/src/cache/cache_config.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/role_dict_config.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/role_dict.erl",
+		"/D/Dropbox/code/gerl/src/db/db_table_role.erl",
+		"/D/Dropbox/code/gerl/src/db/db_table_account.erl",
+		"/D/Dropbox/code/gerl/src/chat/gerl_chat_app.erl",
+		"/C/Users/dell/AppData/Roaming/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
+		"/C/Users/dell/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/D/Dropbox/code/gerl/doc/道具设计.txt",
+		"/D/Dropbox/code/gerl/src/util/util_str.erl",
+		"/C/Users/dell/Downloads/test.txt",
+		"/D/Dropbox/code/gerl/config/cfg_init_datas.erl",
+		"/D/Dropbox/code/gerl/src/util/util_packet.erl",
+		"/D/Dropbox/code/gerl/lib/amnesia/src/drivers/mysql/mysql_drv.erl",
+		"/D/Dropbox/code/gerl/src/protocol_code.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/map_srv.erl",
+		"/D/Dropbox/code/gerl/src/gateway/client_socket.erl",
+		"/D/Dropbox/code/gerl/src/gateway/gateway_dispatch.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/map_api.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/map_dict.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/map_event.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/mod_walk.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/path.erl",
+		"/D/Dropbox/code/gerl/src/util/util_date.erl",
+		"/D/Dropbox/code/gerl/src/map_srv/mod_minheap.erl",
+		"/D/Dropbox/code/gerl/doc/聊天服务设计.txt",
+		"/D/Dropbox/code/gerl/proto/proto_chat.proto",
+		"/D/Dropbox/code/gerl/src/chat/chat_channel.erl",
+		"/D/Dropbox/code/gerl/src/center_srv/account_srv.erl",
+		"/D/Dropbox/code/gerl/src/chat/chat_api.erl",
+		"/D/Dropbox/code/gerl/src/chat/gerl_chat_sup.erl",
+		"/D/Dropbox/code/gerl/src/chat/chat_dict.erl",
+		"/D/Dropbox/code/gerl/include/chat.hrl",
+		"/D/Dropbox/code/gerl/dialyzer_result",
+		"/D/Dropbox/code/gerl/src/map_srv/map_cell.erl",
+		"/C/Users/dell/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/Dropbox/code/gerl/src/util/util_chat.erl",
+		"/D/Dropbox/code/gerl/include/proto_chat_pb.hrl",
+		"/D/Dropbox/code/gerl/src/db/db_conf.erl",
+		"/D/Dropbox/code/gerl/src/db/db_table_magic.erl",
+		"/D/Dropbox/code/gerl/src/db/db_table_item.erl",
+		"/D/Dropbox/code/gerl/src/db/db_table_dragon.erl",
+		"/D/Dropbox/code/gerl/src/db/db_table_achievement.erl",
+		"/D/Dropbox/code/gerl/lib/amnesia/examples/bank.erl",
+		"/E/Job/jooyou/s1/s1_server/script/gen_persistent_table.sh",
+		"/D/programs/rebar-develop/rebar-develop/rebar.config.sample",
+		"/D/Dropbox/code/gerl/src/cache/gerl_cache_app.erl",
+		"/D/Dropbox/code/gerl/deps/goldrush/src/gr_manager.erl",
+		"/D/Dropbox/code/gerl/doc/设计历程.txt",
+		"/D/Dropbox/code/gerl/src/map_srv/map_manager.erl"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"",
+			"*.erl, *.hrl",
+			"*.erl, rebar.config",
+			"*.erl",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"reloader",
+			"doit",
+			"db_tables",
+			"fun",
+			"engine=innodb",
+			"LogTypeInt",
+			"get",
+			"@private",
+			"log_item_change",
+			"log",
+			"timeout_action",
+			"timeout_action2",
+			"ITEM_TYPE_",
+			"ITEM_TYPE_EQUIP",
+			"delete_from_lifetime_index",
+			"add_to_lifetime_index",
+			"false",
+			"rule",
+			"line",
+			"MAIN_LOOP_INTERVAL",
+			"role_bag_dict",
+			"delete_from_all_item_index",
+			"set_used_capacity",
+			"delete_item",
+			"ets:insert(EtsIndex",
+			"delete2",
+			"{delete,",
+			"delete",
+			"update",
+			"ets:insert(EtsIndex",
+			"lists:delete",
+			"is_multi_keys",
+			"rec_transform_cache_to_db",
+			"rec_transform_db_to_cache",
+			"get_dirty_tab",
+			"get_rec_tab",
+			"lookup_from_cache",
+			"get_rec_tab",
+			"element(2",
+			"IndexKeys",
+			"lookup2",
+			"{lookup",
+			"lookup2",
+			"lookup_from_cache",
+			"delete2",
+			"update_element2",
+			"update_element",
+			"delete",
+			"BagPos",
+			"UpdatedList1",
+			"CreatedRecs",
+			"UpdatedRItemRecs",
+			"ExistItem",
+			"DataInserted",
+			"get_used_capacity",
+			"insert",
+			"free_bag_locations",
+			"add_to_equiped_index",
+			"increase_max_item_id",
+			"get_max_item_id",
+			"set_max_item_id",
+			"get_max_item_id",
+			"set_max_item_id",
+			"Datas",
+			"`",
+			"Data",
+			"util_item",
+			"can_overlap",
+			"get_create_param",
+			"colour",
+			"firm_lv",
+			"is_bind",
+			"MaxItemId",
+			"filter_by_type_id2",
+			"get_item_by_type_id",
+			"NpcTypeId",
+			"add_to_item_index",
+			"EquipedIndexs",
+			"equip",
+			"Equip",
+			"equip",
+			"Equip",
+			"equip",
+			"Equip",
+			"equip",
+			"embe_pos",
+			"道具",
+			"fight_attr",
+			"tab_fight_attr",
+			"term",
+			"tab_rune",
+			"21200002",
+			"21200001",
+			"p_goods",
+			"0",
+			"int",
+			"varchar",
+			"mod_minheap",
+			"is_multi_keys",
+			"key_classic",
+			"_",
+			"cfg_map:is_can_move",
+			"join",
+			"event_role_online",
+			"ChatEntityRec",
+			"tab_role_pos",
+			"tab_account",
+			"erlang:send",
+			"role_socket",
+			"role_socket:insert",
+			"close_client",
+			"STATUS_PLAY",
+			"team",
+			"lists:delete",
+			"CHANNEL_PRIVATE",
+			"util_chat",
+			"队伍",
+			"CHANNEL_TEAM",
+			"team",
+			"channel_name_2_id",
+			"TEAM",
+			"CHANNEL_ID_PRIVATE",
+			"ReceiverId",
+			"EntityId",
+			"handle_cast",
+			"get_role_id_by_role_name",
+			"AccountName",
+			"get_role_id_by_account"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 12,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/db/db_table_item.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								765,
+								765
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										775,
+										776
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"entity.name.class"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										764,
+										765
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/map_srv/role_dict.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2508,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1257,
+								1264
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1265,
+										1266
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"entity.name.class"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1264,
+										1265
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1122.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/map_srv/logic/role_bag_dict.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4701,
+								4710
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/map_srv/logic/role_bag.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5422,
+								5422
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4290.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/util/util_user_log.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								104,
+								104
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 198.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								962,
+								962
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 690.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/db/gerl_db1.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "tool/create_table.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "lib/amnesia/src/amnesia.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 74685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73454,
+								73454
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 42973.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/util/util_list.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1115,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								572,
+								586
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										568,
+										569
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"entity.name.class"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										532,
+										533
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "config/cfg_user_log.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								331,
+								331
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "rebar.config",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								172,
+								172
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"function_name_status_row": 26,
+							"syntax": "Packages/Erlang/Erlang Expression.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/map_srv/pp/pp_map.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1146,
+								1146
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "include/chat.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 948,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "deps/colorize/src/colorize.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5238,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4701,
+								4701
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 141,
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2486.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 33,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "scripts/cmd_gen_protocol.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								60
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "tool/gen_protocol.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								795,
+								812
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "src/protocol_code.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1042,
+								1042
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 396.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "src/center_srv/user_log_srv.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								498,
+								498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 34,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "src/util/util_str.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								421,
+								421
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "src/util/util_time.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								345
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "src/db/db_table_user_log.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								214,
+								214
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "src/map_srv/logic/item_life.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								437,
+								452
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "src/db/db_table_role.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "src/db/db_conf.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "src/map_srv/role_dict_config.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								174
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "include/fight.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								49,
+								49
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "src/util/util_item.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1009,
+								1017
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 813.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "config/cfg_item.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								200
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 38,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "src/map_srv/map_event.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								657,
+								667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "src/map_srv/logic/role_loop.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "src/map_srv/mod_minheap.erl",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 9341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "src/map_srv/map_srv.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3361,
+								3377
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2046.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "include/log.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1019,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1018,
+								866
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 21.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 37,
+					"type": "text"
+				},
+				{
+					"buffer": 34,
+					"file": "src/map_srv/map_dict.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3817,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								500
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1650.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 35,
+					"file": "include/map.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								624,
+								628
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										679,
+										680
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"entity.name.class"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										578,
+										579
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"file": "include/item.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1757,
+								1757
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 970.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 36,
+					"type": "text"
+				},
+				{
+					"buffer": 37,
+					"file": "src/cache/cache_config.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1646,
+								1660
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 38,
+					"file": "include/bag.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								91,
+								109
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										114,
+										115
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"entity.name.class"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										90,
+										91
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
+					"file": "include/error_code.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 194.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "Packages/Erlang/rebar.sublime-build",
+	"project": "gerl_project.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"role",
+				"src\\map_srv\\logic\\role_bag.erl"
+			],
+			[
+				"ppmap",
+				"src\\map_srv\\pp\\pp_map.erl"
+			],
+			[
+				"rebar",
+				"rebar.config"
+			],
+			[
+				"utilis",
+				"src\\util\\util_list.erl"
+			],
+			[
+				"protocol_code.erl",
+				"src\\protocol_code.erl"
+			],
+			[
+				"gerl_db",
+				"src\\db\\gerl_db1.erl"
+			],
+			[
+				"cfg_user_log",
+				"config\\cfg_user_log.erl"
+			],
+			[
+				"utiltime",
+				"src\\util\\util_time.erl"
+			],
+			[
+				"utilstr",
+				"src\\util\\util_str.erl"
+			],
+			[
+				"use",
+				"src\\center_srv\\user_log_srv.erl"
+			],
+			[
+				"gerl_set",
+				"run_setting\\gerl_setting1.erl"
+			],
+			[
+				"gen_protocol",
+				"tool\\gen_protocol.erl"
+			],
+			[
+				"cmd_gen_protocol",
+				"scripts\\cmd_gen_protocol.bat"
+			],
+			[
+				"util_user_log",
+				"src\\util\\util_user_log.erl"
+			],
+			[
+				"db_table_user_log",
+				"src\\db\\db_table_user_log.erl"
+			],
+			[
+				"",
+				"src\\util\\util_user_log.erl"
+			],
+			[
+				"user_log_srv",
+				"src\\center_srv\\user_log_srv.erl"
+			],
+			[
+				"rolbag",
+				"src\\map_srv\\logic\\role_bag.erl"
+			],
+			[
+				"center_srv.erl",
+				"src\\center_srv\\online_srv.erl"
+			],
+			[
+				"db.rl",
+				"src\\db\\db.erl"
+			],
+			[
+				"rolebag",
+				"src\\map_srv\\logic\\role_bag_dict.erl"
+			],
+			[
+				"mapsrv",
+				"src\\map_srv\\map_srv.erl"
+			],
+			[
+				"role_loop",
+				"src\\map_srv\\logic\\role_loop.erl"
+			],
+			[
+				"rolbadic",
+				"src\\map_srv\\logic\\role_bag_dict.erl"
+			],
+			[
+				"rolebagdi",
+				"src\\map_srv\\logic\\role_bag_dict.erl"
+			],
+			[
+				"roleba",
+				"src\\map_srv\\logic\\role_bag.erl"
+			],
+			[
+				"map_dict",
+				"src\\map_srv\\map_dict.erl"
+			],
+			[
+				"mapdi",
+				"src\\map_srv\\map_dict.erl"
+			],
+			[
+				"mapsr",
+				"src\\map_srv\\map_srv.erl"
+			],
+			[
+				"db_talbitme",
+				"src\\db\\db_table_item.erl"
+			],
+			[
+				"role_bag_dict",
+				"src\\map_srv\\logic\\role_bag_dict.erl"
+			],
+			[
+				"role_bag",
+				"src\\map_srv\\logic\\role_bag.erl"
+			],
+			[
+				"utilitem",
+				"src\\util\\util_item.erl"
+			],
+			[
+				"cach",
+				"src\\cache\\cache_config.erl"
+			],
+			[
+				"cache",
+				"src\\cache\\cache_config.erl"
+			],
+			[
+				"gen_cache",
+				"include\\gen_cache.hrl"
+			],
+			[
+				"cachecon",
+				"src\\cache\\cache_config.erl"
+			],
+			[
+				"spe",
+				"include\\spec_type.hrl"
+			],
+			[
+				"error",
+				"include\\error_code.hrl"
+			],
+			[
+				"item",
+				"include\\item.hrl"
+			],
+			[
+				"util_item",
+				"src\\util\\util_item.erl"
+			],
+			[
+				"errorcode",
+				"include\\error_code.hrl"
+			],
+			[
+				"roledic",
+				"src\\map_srv\\role_dict.erl"
+			],
+			[
+				"dbtableit",
+				"src\\db\\db_table_item.erl"
+			],
+			[
+				"db_table_item",
+				"src\\db\\db_table_item.erl"
+			],
+			[
+				"db_tabelrole",
+				"src\\db\\db_table_role.erl"
+			],
+			[
+				"mapeve",
+				"src\\map_srv\\map_event.erl"
+			],
+			[
+				"role_dicttm",
+				"src\\map_srv\\role_dict_tmp.erl"
+			],
+			[
+				"mysqld",
+				"lib\\amnesia\\src\\drivers\\mysql\\mysql_drv.erl"
+			],
+			[
+				"npcs",
+				"src\\map_srv\\npc_fsm.erl"
+			],
+			[
+				"db_table_role",
+				"src\\db\\db_table_role.erl"
+			],
+			[
+				"util_str",
+				"src\\util\\util_str.erl"
+			],
+			[
+				"mysdr",
+				"lib\\amnesia\\src\\drivers\\mysql\\mysql_drv.erl"
+			],
+			[
+				"gen_cache.erl",
+				"src\\cache\\gen_cache.erl"
+			],
+			[
+				"gerl_setting",
+				"run_setting\\gerl_setting.erl"
+			],
+			[
+				"npc_fsm.erl",
+				"src\\map_srv\\npc_fsm.erl"
+			],
+			[
+				"map_api.erl",
+				"src\\map_srv\\map_api.erl"
+			],
+			[
+				"util_date.erl",
+				"src\\util\\util_date.erl"
+			],
+			[
+				"role_dict.erl",
+				"src\\map_srv\\role_dict.erl"
+			],
+			[
+				"path.erl",
+				"src\\map_srv\\path.erl"
+			],
+			[
+				"map_event.erl",
+				"src\\map_srv\\map_event.erl"
+			],
+			[
+				"cfg_map",
+				"config\\maps\\cfg_map.erl"
+			],
+			[
+				"client_socket.erl",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"db_table_rune.erl",
+				"src\\db\\db_table_rune.erl"
+			],
+			[
+				"chat_api",
+				"src\\chat\\chat_api.erl"
+			],
+			[
+				"accsr",
+				"src\\center_srv\\account_srv.erl"
+			],
+			[
+				"client",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"utilchat",
+				"src\\util\\util_chat.erl"
+			],
+			[
+				"chat_channel",
+				"src\\chat\\chat_channel.erl"
+			],
+			[
+				"online_srv",
+				"src\\center_srv\\online_srv.erl"
+			],
+			[
+				"cliens",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"clienso",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"manager",
+				"deps\\goldrush\\src\\gr_manager.erl"
+			],
+			[
+				"mysql_auth",
+				"lib\\amnesia\\src\\drivers\\mysql\\mysql_auth.erl"
+			],
+			[
+				"mysql_auth.erl",
+				"lib\\amnesia\\src\\drivers\\mysql\\mysql_auth.erl"
+			],
+			[
+				"db_table_account",
+				"src\\db\\db_table_account.erl"
+			],
+			[
+				"path",
+				"src\\map_srv\\path.erl"
+			],
+			[
+				"npc_dict.erl",
+				"src\\map_srv\\npc_dict.erl"
+			],
+			[
+				"spec_type.hrl",
+				"include\\spec_type.hrl"
+			],
+			[
+				"gen_pro",
+				"tool\\gen_protocol.erl"
+			],
+			[
+				"role.erl",
+				"src\\map_srv\\logic\\role.erl"
+			],
+			[
+				"account_srv.erl",
+				"src\\center_srv\\account_srv.erl"
+			],
+			[
+				"cfg_npc",
+				"config\\cfg_npc.erl"
+			],
+			[
+				"map",
+				"include\\map.hrl"
+			],
+			[
+				"mapai",
+				"src\\map_srv\\map_api.erl"
+			],
+			[
+				"mod_wl",
+				"src\\map_srv\\mod_walk.erl"
+			],
+			[
+				"utilr",
+				"src\\util\\util_random.erl"
+			],
+			[
+				"cfgnpc",
+				"config\\cfg_npc.erl"
+			],
+			[
+				"npcfsm",
+				"src\\map_srv\\npc_fsm.erl"
+			],
+			[
+				"npcfms",
+				"ebin\\npc_fsm.beam"
+			],
+			[
+				"util_packet",
+				"src\\util\\util_packet.erl"
+			],
+			[
+				"client_socket",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"npc_dict",
+				"src\\map_srv\\npc_dict.erl"
+			],
+			[
+				"npc",
+				"src\\map_srv\\npc.erl"
+			],
+			[
+				"map_dict.erl",
+				"src\\map_srv\\map_dict.erl"
+			],
+			[
+				"he",
+				"include\\hero.hrl"
+			],
+			[
+				"cfg_map_10000",
+				"config\\maps\\cfg_map_10000.erl"
+			],
+			[
+				"sh",
+				"sh_start_dev.sh"
+			],
+			[
+				"cmd",
+				"cmd_start_dev.bat"
+			],
+			[
+				"lager_crash_log",
+				"deps\\lager\\src\\lager_crash_log.erl"
+			],
+			[
+				"star",
+				"cmd_start_dev.bat"
+			],
+			[
+				"reb",
+				"rebar.config"
+			],
+			[
+				"start",
+				"cmd_start_dev.bat"
+			],
+			[
+				"log",
+				"include\\log.hrl"
+			],
+			[
+				"util_date",
+				"src\\util\\util_date.erl"
+			],
+			[
+				"mamsr",
+				"src\\map_srv\\map_srv.erl"
+			],
+			[
+				"csql",
+				"create_db.sql"
+			],
+			[
+				"clisocket",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"map_srv",
+				"src\\map_srv\\map_srv.erl"
+			],
+			[
+				"map_dis",
+				"src\\center_srv\\map_dispatch.erl"
+			],
+			[
+				"db_role",
+				"src\\cache\\db_role.erl"
+			],
+			[
+				"cfg_mask_10000",
+				"config\\maps\\cfg_mask_10000.erl"
+			],
+			[
+				"cachec",
+				"src\\cache\\cache_config.erl"
+			],
+			[
+				"mape",
+				"src\\map_srv\\map_event.erl"
+			],
+			[
+				"cr",
+				"tool\\create_table.erl"
+			],
+			[
+				"map_ev",
+				"src\\map_srv\\map_event.erl"
+			],
+			[
+				"role_dict_tmp",
+				"src\\map_srv\\role_dict_tmp.erl"
+			],
+			[
+				"role_dict",
+				"src\\map_srv\\role_dict.erl"
+			],
+			[
+				"cache_util",
+				"src\\cache\\cache_util.erl"
+			],
+			[
+				"db_module",
+				"src\\db\\db_module.erl"
+			],
+			[
+				"cli",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"marpsr",
+				"src\\map_srv\\gerl_map_srv.app.src"
+			],
+			[
+				"clieso",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"clies",
+				"src\\gateway\\client_socket.erl"
+			],
+			[
+				"mysqldr",
+				"lib\\amnesia\\src\\drivers\\mysql\\mysql_drv.erl"
+			],
+			[
+				"amne",
+				"lib\\amnesia\\src\\amnesia.erl"
+			],
+			[
+				"account_srv",
+				"src\\center_srv\\account_srv.erl"
+			],
+			[
+				"b_table_role",
+				"include\\db_table_role.hrl"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"E:\\Job\\jooyou\\s1\\s1_server\\s1.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 335.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

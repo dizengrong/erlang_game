@@ -1,0 +1,4 @@
+2009-07-14  corrado  <csanto@diit.unict.it>
+
+	* mysql_drv.erl (field_option): added "default"
+

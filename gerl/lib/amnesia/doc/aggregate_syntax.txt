@@ -1,0 +1,13 @@
+
+
+{aggregate, "count(*)", Type}
+select count(*) from ....;
+
+{aggregate, "count(*)", Type, name}
+select count(*), ... from ... group by name;
+
+{aggregate, "count(*)", Type, {"__aggregated_data = $1", [1]}}
+select count(*) as __aggregated_data from .... having __aggregated_data = 1;
+
+{aggregate, "count(*)", Type, name, {"__aggregated_data = $1", [1]}}
+select count(*), ... from ... group by name having __aggregated_data = 1;

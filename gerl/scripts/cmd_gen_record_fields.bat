@@ -1,0 +1,1 @@
+erl -pa ebin -s gen_record_fields start -s init stop

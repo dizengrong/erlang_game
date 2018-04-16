@@ -1,0 +1,28 @@
+
+map_api.erl:240: The call map_api:broadcast_role_leave(CellNpcRec::#r_cell_npc{},LeaveCells::[number()],'true') will never return since the success typing is (#r_cell_role{},[number()],boolean()) -> 'ok' and the contract is (CellRoleRec::#r_cell_role{},NotifyCells::[integer()],IsNotifySelf::boolean()) -> 'ok'
+util_date.erl:502: The created fun has no local return
+util_date.erl:502: The created fun has no local return
+util_date.erl:502: Fun application with arguments ({'error','bad_date'}) will never return since it differs in the 1st argument from the success typing arguments: ({{non_neg_integer(),1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,1..255},{byte(),byte(),byte()}})
+util_date.erl:503: Guard test {{non_neg_integer(),1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,1..255},{byte(),byte(),byte()}} =:= __X::{'error','bad_date'} can never succeed
+Unknown functions:
+  amnesia:add_new/2
+  amnesia:fetch/2
+  amnesia:fetch/3
+  amnesia:fetch/4
+  amnesia:open/2
+  amnesia:update/2
+  eunit:test/1
+  gen_gerl_setting:generate/1
+  lager:debug/2
+  lager:emergency/2
+  lager:error/2
+  lager:info/2
+  lager:start/0
+  lager:warning/1
+  lager:warning/2
+  mysql:connect/7
+  mysql:execute/4
+  mysql:fetch/3
+  mysql:prepare/2
+  mysql:transaction/3
+  ranch:start_listener/6

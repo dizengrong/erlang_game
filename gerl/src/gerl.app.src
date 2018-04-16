@@ -1,0 +1,20 @@
+{application, gerl,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { gerl_app, []}},
+  {env, [
+  			{db, gerl_mysql_conn},
+	        {db_host, "192.168.1.1"},
+	        {db_port, 3306},
+	        {db_user, "root"},
+	        {db_pass, "123456"},
+	        {db_name, "gerl_db"},
+	        {db_encode, utf8}
+  		]}
+ ]}.

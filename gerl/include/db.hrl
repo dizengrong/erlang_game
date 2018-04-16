@@ -1,0 +1,7 @@
+-define(DB, 		gerl_setting:get(db_conn)).
+-define(DB_HOST, 	gerl_setting:get(db_host)).
+-define(DB_PORT, 	gerl_setting:get(db_port)).
+-define(DB_USER, 	gerl_setting:get(db_user)).
+-define(DB_PASS, 	gerl_setting:get(db_pass)).
+-define(DB_NAME, 	gerl_setting:get(db_name)).
+-define(DB_ENCODE, 	gerl_setting:get(db_encode)).

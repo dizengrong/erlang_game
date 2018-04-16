@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $Id: configure,v 1.5 2007/11/22 14:55:18 corrado_santoro Exp $
+#
+
+ERLBIN=`whereis erl | sed 's|.*:||' | awk '{print $1}'`
+ERLDIR=`dirname $ERLBIN`
+ERLBASE=`dirname \`readlink -f $ERLBIN\``/..
+ERLLIB=$ERLBASE/lib
+ROSECWD=`pwd`
+
+
+echo ERLBASE=$ERLBASE > Makefile.conf
+echo ERLDIR=$ERLDIR >> Makefile.conf
+echo ERLLIB=$ERLLIB >> Makefile.conf
+
+echo "*******************************************************************"
+echo "*"
+echo "* Erlang Lib Directory is:"
+echo "*    " $ERLLIB
+echo "*"
+echo "*******************************************************************"
+

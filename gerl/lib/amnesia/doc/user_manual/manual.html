@@ -1,0 +1,1352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>AMNESIA - An Erlang Relational Database Interface</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a>
+<table width="100%" border="0" cellspacing="0" cellpadding="2"
+summary="navigation bar"><tr><td>
+<a href="../reference_manual/index.html">Reference Manual</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<h1>AMNESIA - An Erlang Relational Database Interface</h1>
+<p>Copyright © 2009 Corrado Santoro, Vincenzo Nicosia</p>
+<p><b>Version:</b> 1.4.0</p>
+<p><b>Authors:</b> Corrado Santoro (<a
+href="mailto:santoro@dmi.unict.it"><tt>santoro [at] dmi [dot] unict [dot]
+it</tt></a>), Vincenzo Nicosia (<a
+href="mailto:vnicosia@diit.unict.it"><tt>vnicosia [at] diit [dot] unict
+[dot] it</tt></a>).</p>
+
+<a name="sect_1" />
+<h2 class="indextitle">1. Introduction</h2>
+
+<b>AMNESIA</b> is an Erlang library providing an abstraction layer for
+interfacing
+relational DBMSs. The basic objective is to allow designers to integrate
+relational database support in Erlang programs using Erlang-native types
+and language constructs and thus without needing to manage SQL statements
+and DMBS-specific peculiarities. The main characteristics are
+following:
+<ul>
+<li>Easy specification of the structure of a database (tables and links) by
+means of Erlang-native types and functions.</li>
+<li>Direct creation of the tables starting from their Erlang
+specification.</li>
+<li>Direct use of Erlang records to handle database data.</li>
+<li>Simple functions for database accessing and data handling.</li>
+<li>Support for all relational operations (insert, select, join, etc.)
+by means of proper Erlang functions.</li>
+</ul>
+
+<p>AMNESIA is structured by means of a layered architecture.</p>
+
+<p>The <b>amnesia</b> module is at the topmost layer and provides the main
+high-level functions for database access. Then, on the basis of the DBMS
+chosen for the specific database implemented, the amnesia module contacts
+the proper <b>amnesia_driver</b>; the latter acts as a bridge between the
+amnesia layer and the bottom layer (<b>dbms_layer</b>), which provides the
+real interface to the specific DBMS selected.
+</p>
+
+<p>The following document describes how to install and use AMNESIA.</p>
+
+<a name="sect_2" />
+<h2 class="indextitle">2. Installing AMNESIA</h2>
+
+<p>Installing AMNESIA is quite simple: unpack the tarball, reach the
+<tt>amnesia-X.Y.Z</tt> directory and type:</p>
+
+<p>
+<pre>
+$ ./configure
+$ make
+$ sudo make install
+</pre>
+</p>
+
+<a name="sect_3" />
+<h2 class="indextitle">3. Specifying and Creating a Database</h2>
+
+<a name="sect_3_1" />
+<h3 class="indextitle">3.1. The "Sales" Database</h3>
+
+<p>Let us describe how to use AMNESIA by means of an example and let us
+suppose that we want to implement a database for our sales office; this
+database has to manage <b>customers</b>, <b>products</b> and
+<b>orders</b>.</p>
+
+<p>On this basis, we will include in our database the tables
+<b>customer</b>, <b>product</b>, <b>orders</b> and <b>order_line</b>
+structured as follows:</p>
+
+<table>
+<tr>
+<td valign="top">
+
+<table border="1">
+  <tr><td colspan="2"><b>CUSTOMER</b></td></tr>
+  <tr><td>customer_code</td><td>integer, unique</td></tr>
+  <tr><td>name</td><td>string</td></tr>
+  <tr><td>address</td><td>string</td></tr>
+  <tr><td>email</td><td>string</td></tr>
+</table>
+
+</td>
+<td valign="top">
+
+<table border="1">
+  <tr><td colspan="2"><b>PRODUCT</b></td></tr>
+  <tr><td>product_code</td><td>string, unique</td></tr>
+  <tr><td>description</td><td>string</td></tr>
+  <tr><td>price</td><td>decimal</td></tr>
+</table>
+
+</td>
+<td valign="top">
+
+<table border="1">
+  <tr><td colspan="2"><b>ORDERS</b></td></tr>
+  <tr><td>order_number</td><td>integer, unique</td></tr>
+  <tr><td>order_date</td><td>date</td></tr>
+  <tr><td>customer</td><td><i>reference to table <b>CUSTOMER</b></i></td></tr>
+</table>
+
+</td>
+<td valign="top">
+
+<table border="1">
+  <tr><td colspan="2"><b>ORDER_LINE</b></td></tr>
+  <tr><td>order</td><td><i>reference to table <b>ORDERS</b></i></td></tr>
+  <tr><td>product</td><td><i>reference to table <b>PRODUCT</b></i></td></tr>
+  <tr><td>quantity</td><td>integer</td></tr>
+</table>
+
+</td>
+
+</tr>
+</table>
+
+<p>To this aim, let us write a module <b>sales.erl</b> where we will define
+everything we need, that is the DMBS type, the connection information, the
+tables with their fields, field types and references. This module will
+contain the following preamble:</p>
+
+<p>
+<pre class="code">
+
+ -module (sales).
+
+ -include_lib ("amnesia/include/amnesia_db_def.hrl").
+
+</pre>
+</p>
+
+<p>
+Then the following functions must be present:
+<ul>
+<li><tt>driver_info/0</tt>, providing the details about the connection with
+the chosen DBMS;</li>
+<li><tt>tables/0</tt>, returning the list of <i>table names</i>;</li>
+<li><tt>table/1</tt>, returning the structure of the table given as
+argument.</li>
+</ul>
+</p>
+
+<p>These functions are exported in the <tt>amnesia.hrl</tt> include file,
+so the presence of the proper <tt>-export(...)</tt> compiler directive is
+not necessary.</p>
+
+<p>Since we are using MySQL, the <tt>driver_info/0</tt> function will be
+like the following:</p>
+
+<p>
+<pre class="code">
+
+ driver_info () ->
+   [{driver, mysql_drv},
+    {host, "localhost"},
+    {user, "sales_office"},
+    {password, "sales"}].
+
+</pre>
+</p>
+
+<p>Here we have specified that we are using the mysql driver to connect to
+the MySQL DBMS present in our <i>"localhost"</i>, using the user name
+<i>"sales_office"</i>, with password <i>"sales"</i>. Note the user has not
+to be present in the DBMS: it's up to AMNESIA to perform all operations to
+create the user name, assign the password and grant access to DB tables.</p>
+
+<p>The next function to be defined, <tt>tables/0</tt>, has to return a list
+of atoms, each one expressing the name of one of the tables of our
+database:</p>
+
+<p>
+<pre class="code">
+
+ tables () -> [customer, product, orders, order_line].
+
+</pre>
+</p>
+
+<p>Then we are ready to define the structure of each table; this can be
+performed by means of function <tt>table/1</tt>, which takes as argument an
+atom specifying the table name and returns the table structure, as the
+listing below shows:</p>
+
+<p>
+<pre class="code">
+
+ table (customer) ->
+   [ {customer_code, integer, [unique, not_null]},
+     {name, varchar, not_null},
+     {address, varchar, not_null},
+     {email, varchar, [not_null, {default, ""}]} ];
+ table (product) ->
+   [ {product_code, varchar, [unique, not_null]},
+     {description, varchar, not_null},
+     {price, {decimal, 10, 2}, not_null} ];
+ table (orders) ->
+   [ {order_number, integer, [unique, not_null]},
+     {order_date, date, not_null},
+     refers_to (customer) ];
+ table (order_line) ->
+   [ refers_to (orders),
+     refers_to (product),
+     {quantity, integer, not_null} ].
+
+</pre>
+</p>
+
+<p>As the reader can note, a different function clause is used for each
+table of our database; the table structure is expressed by means of a
+list of 3-elements tuples, which represent the fields; each element of the
+tuple has the following meaning:</p>
+<ul>
+<li>the first element is the <i>field name</i>;</li>
+<li>the second element is the <i>field type</i>;</li>
+<li>the last element is a list of <i>field modifiers</i>, which express
+constraints like
+uniqueness, no null values, default values, etc.</li>
+</ul>
+
+<p>In the special case in which a table has a reference (a foreign key) to
+another table, the expression <tt>refers_to(TableName)</tt> has to be placed
+in the field list. This instructs AMNESIA to automatically create a foreign
+key and thus properly link the tables.</p>
+
+<a name="sect_3_2" />
+<h3 class="indextitle">3.2. Creating the database and the datatypes</h3>
+
+<p>After having written the Erlang module specifying the database as the
+previous Section reports, the next step is to physically create the
+database in the DBMS and generate a <tt>.hrl</tt> file which will contain
+the proper Erlang <tt>record</tt> definitions for the data to be
+handled.</p>
+
+<p>To this aim, after compiling the Erlang module (<tt>sales.erl</tt> in
+our case), we perform database and include-file generation as follows:</p>
+
+<p>
+<pre class="code">
+
+ Erlang (BEAM) emulator version 5.5.5 [source] [async-threads:0] [hipe] [kernel-poll:false]
+
+ Eshell V5.5.5  (abort with ^G)
+ 1> amnesia:db_tool(sales, [{make_hdr, "."}, make_db, {dba_user, "root"}, {dba_password, "yourpassword"}]).
+
+</pre>
+</p>
+
+<p>The <tt>db_tool/2</tt> function of the <tt>amnesia</tt> module takes two
+arguments: an atom specifying the module defining the database (which will
+also become the name of the database), and a list of options each one
+having the following meaning:</p>
+
+<ul>
+
+  <li><tt>{make_hdr, Dir}</tt>, generates the include file containing
+  record types  (<tt>sales.hrl</tt>, in  our case); the file will be
+  created in the directory specified by <tt>Dir</tt>;</li>
+
+  <li><tt>make_db</tt> or <tt>{make_db}</tt>, creates the database and the
+  user holding the database (which is specified in the option list returned
+  by function <tt>driver_info/0</tt>), and grants to the user the proper
+  privileges;</li>
+
+  <li><tt>{dba_user, Username}</tt>, specifies the username of the database
+  administrator (the "root" user of the DBMS);</li>
+
+  <li><tt>{dba_password, Password}</tt>, specifies the password for the
+  database administrator.</li>
+
+</ul>
+
+<p>If nothing went wrong, AMNESIA should have created the <tt>sales</tt>
+database in your MySQL with tables <tt>customer</tt>, <tt>product</tt>,
+<tt>orders</tt> and <tt>order_line</tt>, as well as the user
+<tt>sales_office</tt>, with password <tt>sales</tt>.
+This can be verified by means of the MySQL command line client, as it is
+shown below:
+</p>
+
+<p><pre class="code">
+
+ corrado@csanto:~$ mysql -u sales_office -p
+ Enter password:
+ Welcome to the MySQL monitor.  Commands end with ; or \g.
+ Your MySQL connection id is 8
+ Server version: 5.0.38-Ubuntu_0ubuntu1.4-log Ubuntu 7.04 distribution
+
+ Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+ mysql> use sales;
+ Reading table information for completion of table and column names
+ You can turn off this feature to get a quicker startup with -A
+
+ Database changed
+ mysql> describe customer;
+ +---------------+--------------+------+-----+---------+----------------+
+ | Field         | Type         | Null | Key | Default | Extra          |
+ +---------------+--------------+------+-----+---------+----------------+
+ | id            | int(11)      | NO   | PRI | NULL    | auto_increment |
+ | customer_code | int(11)      | NO   | UNI |         |                |
+ | name          | varchar(255) | NO   |     |         |                |
+ | address       | varchar(255) | NO   |     |         |                |
+ | email         | varchar(255) | NO   |     |         |                |
+ +---------------+--------------+------+-----+---------+----------------+
+ 5 rows in set (0.00 sec)
+
+ mysql> describe order_line;
+ +------------+---------+------+-----+---------+----------------+
+ | Field      | Type    | Null | Key | Default | Extra          |
+ +------------+---------+------+-----+---------+----------------+
+ | id         | int(11) | NO   | PRI | NULL    | auto_increment |
+ | orders_id  | int(11) | YES  |     | NULL    |                |
+ | product_id | int(11) | YES  |     | NULL    |                |
+ | quantity   | int(11) | NO   |     |         |                |
+ +------------+---------+------+-----+---------+----------------+
+ 4 rows in set (0.00 sec)
+
+</pre></p>
+
+<p>The work performed by AMNESIA can be derived by comparing the structure
+of the tables created with the definition provided in the
+<tt>sales.erl</tt> file. For each table, AMNESIA automatically adds an
+<tt>id</tt> field which acts as primary key and is also used to make
+connections between tables (for example, the <tt>orders_id</tt> field of
+table <tt>order_line</tt> is a foreign key and is linked to the <tt>id</tt>
+field of the <tt>orders</tt> table).
+
+This <tt>id</tt> field is a treated as a "sequence", with respect to the
+DBMS, or "auto_increment" in the specific case of MySQL.
+</p>
+
+<p>
+Together with the creation of the tables, AMNESIA generated the
+<tt>sales.hrl</tt> file, containing an Erlang record definition for each
+table; the fields of each record are exactly the same as the ones of the
+database tables, as the listing below reports:</p>
+
+<p><pre class="code">
+
+ -record (customer, {
+         id = null,
+         customer_code = null,
+         name = null,
+         address = null,
+         email = []}).
+
+ -record (product, {
+         id = null,
+         product_code = null,
+         description = null,
+         price = null}).
+
+ -record (orders, {
+         id = null,
+         order_number = null,
+         order_date = null,
+         customer = null}).
+
+ -record (order_line, {
+         id = null,
+         orders = null,
+         product = null,
+         quantity = null}).
+
+</pre></p>
+
+<a name="sect_4" />
+<h2 class="indextitle">4. Working with the database</h2>
+
+<a name="sect_4_1" />
+<h3 class="indextitle">4.1. Opening the database and adding data</h3>
+
+<p>Once the database and the include files are generated we are ready to
+perform data management. To work with the created database, the first step
+is to <i>open</i> it through the <tt>amnesia:open/1</tt> function; then we
+can use functions <tt>add_new</tt>, <tt>update</tt>, <tt>delete</tt> and
+<tt>fetch</tt> to respectively perform data adding, updating, deleting and
+querying.</p>
+
+<p>To test these functionalities, let's write a simple Erlang module like
+the following:</p>
+
+<p><pre class="code">
+
+ -module (sales_test).
+
+ -include ("sales.hrl").
+
+ -export ([populate/0]).
+
+
+ populate() ->
+   {ok, Pid} = amnesia:open(sales),
+
+   %% adding 3 customers
+   {ok, Cust1} = amnesia:add_new (Pid, #customer {customer_code = 102341, name = "John", address = "XXXXX", email = "john@xxx"}),
+   {ok, Cust2} = amnesia:add_new (Pid, #customer {customer_code = 394021, name = "Corrado", address = "YYYYYY", email = "corrado@yyy"}),
+   {ok, Cust3} = amnesia:add_new (Pid, #customer {customer_code = 102391, name = "Dave", address = "Dave's home", email = "dave@zzz"}),
+
+   %% adding 3 products
+   {ok, P1} = amnesia:add_new (Pid, #product { product_code = "001", description = "CPU Intel", price = 231.10 }),
+   {ok, P2} = amnesia:add_new (Pid, #product { product_code = "002", description = "Compact Flash 4G", price = 57.90 }),
+   {ok, P3} = amnesia:add_new (Pid, #product { product_code = "003", description = "Hard Disk 500G", price = 190.77 }),
+
+   %% now let's add an order for customer "Cust2"
+   {ok, Order} = amnesia:add_new (Pid, #orders { order_number = 30, order_date = {2008, 7, 17}, customer = Cust2 }),
+
+   %% ... and these are the order lines
+   amnesia:add_new (Pid, #order_line { orders = Order, product = P2, quantity = 3 }),
+   amnesia:add_new (Pid, #order_line { orders = Order, product = P1, quantity = 10 }),
+
+   %% finally, let's add a new product and another order using a single function call
+   amnesia:add_new (Pid, [ #product { product_code = "004", description = "Data Server", price = 5200.00 },
+                             #orders { order_number = 31, order_date = {2008, 7, 20}, customer = Cust1},
+                             #order_line { orders = '$2', product = P3, quantity = 2},
+                             #order_line { orders = '$2', product = '$1', quantity = 11 } ]),
+   ok.
+
+</pre></p>
+
+<p>Function <tt>populate</tt> of the listing below shows the various way in
+which we can perform data adding by means of function
+<tt>amnesia:add_new/2</tt>.</p>
+
+<p>First of all, we open the <tt>sales</tt> database by using the function
+call <tt>amnesia:open(sales)</tt>. Following this call, AMNESIA contacts
+the <tt>sales.erl</tt> module to know the structure of the database and
+opens the connection with the DBMS.</p>
+
+<p>Then, to perform data adding, we have to simply invoke the function
+<tt>amnesia:add_new/2</tt> providing two parameters: the pid returned by
+<tt>amnesia:open</tt> and representing the process handling the
+database, and the record defining our data, with its field properly
+assigned. If the insert operation succeeds, the function returns the tuple
+<tt>{ok, Data}</tt>; here <tt>Data</tt> is the same record provided as
+second parameter, but with the <tt>id</tt> field properly set. On the other
+hand, if the insert operation fails, the tuple <tt>{error, Reason}</tt>
+will be returned.</p>
+
+<p>The data returned can be directly used when adding records to other
+tables which have fields referring to it. In our sales database, for
+example, the "orders" table has a reference to the "customer" table; as a
+result, the record <tt>#orders</tt> has the field <tt>customer</tt> which
+should be set equal to the <tt>id</tt> field (primary key) of the referred
+<tt>#customer</tt> record. However, instead of manually assigning the
+<tt>id</tt> field (and thus having a specific knowledge of "ids"), the
+programmer can assign the foreign key directly to the <i>complete</i>
+record: it's up to AMNESIA to extract the "id" and perform data adding
+correctly. Such a feature is provided to hide the details of
+"record-linking-by-id" and let the programmer to handle only high-level
+data.</p>
+
+<p>This is shown in the example when adding an order to the customer with
+code "394021" (assigned to variable <tt>Cust2</tt>); the order will contain
+two lines, the first specifying 3 items of product with code "002" and 10
+items of product with code "001". When we pass the <tt>#orders</tt> record,
+we set the <tt>customer</tt> field directly to variable <tt>Cust2</tt>, and
+a similar thing is done in adding order lines as for the belonging order
+and the product(s) specified.</p>
+
+<p>The last <tt>add_new</tt> call of the example above shows another
+feature provided by AMNESIA to add information to the database, that is,
+passing by means of a list of records, the bunch of data that has to be
+inserted. This feature can be used, for example, to add an order with its
+lines using a single function call. In this case, to refer to a record of
+the list, the programmer can use the special atoms <tt>'$1'</tt>,
+<tt>'$2'</tt>, <tt>'$3'</tt>, ..., to respectively refer to the first, the
+second, the third, ..., record of the provided list. In the example, we are
+adding a new product and a new order which contains two products: order
+lines (third and fourth elements of the list) are linked to the order
+(second element) by using the <tt>'$2'</tt> atom, while the second order
+line refers to the product (first element of the list) by means of the
+<tt>'$1'</tt> atom. It is the task of AMNESIA to resolve such internal
+references and replace <tt>'$<i>n</i>'</tt> markers with proper
+data.</p>
+
+<a name="sect_4_2" />
+<h3 class="indextitle">4.2. Extracting data by queries</h3>
+
+<a name="sect_4_2_1" />
+<h4 class="indextitle">4.2.1. Simple Queries</h4>
+
+<p>Querying table's data can be easily performed by means of function
+<tt>amnesia:fetch</tt>, which, in its basic form, requires two parameters:
+the pid of the AMNESIA process handling the database and the name of the
+table to be queried. For example, executing the code:</p>
+
+<p><pre class="code">
+
+ amnesia:fetch(Pid, customer)
+
+</pre></p>
+
+<p>the following data will be returned:</p>
+
+<p><pre class="code">
+
+ {ok,[{customer,1,102341,"John","XXXXX","john@xxx"},
+      {customer,2,394021,"Corrado","YYYYYY","corrado@yyy"},
+      {customer,3,102391,"Dave","Dave's home","dave@zzz"}]}
+
+</pre></p>
+
+<p>The reply of the <tt>fetch</tt> function (when this succeeds) is therefore
+<tt>{ok, Data}</tt>, where <tt>Data</tt> is a list of records of the same
+type of the table specified.</p>
+
+<a name="sect_4_2_2" />
+<h4 class="indextitle">4.2.2. Filtering Data</h4>
+
+<p>The second form of the <tt>fetch</tt> function gets an additional
+parameter specifying a <i>filtering predicate</i>, as in the "WHERE" clause
+of an SQL "SELECT" statement. This is provided in a tuple
+<tt>{PredicateSpec,ValueList}</tt> where <tt>PredicateSpec</tt> is a
+string which expresses the predicate in SQL syntax but containing
+the placemarks <tt>$1</tt>, <tt>$2</tt>, etc., for actual data which are
+passed in the list <tt>ValueList</tt>. For example, to get the orders of
+customer with "id = 2", we can use the following example:</p>
+
+<p><pre class="code">
+
+ 8> {ok, [_, Cust2 | _]} = amnesia:fetch (Pid, customer).
+ {ok, ...,
+      #customer{id = 2,
+                customer_code = 394021,
+                name = "Corrado",
+                address = "YYYYYY",
+                email = "corrado@yyy"},
+      ...}
+ 9> amnesia:fetch(Pid, orders, {"customer_id = $1", [Cust2#customer.id]}).
+ {ok,[#orders{id = 1,order_number = 30,order_date = {2008,7,17},customer = 2}]}
+
+</p></pre>
+
+<p>The <tt>PredicateSpec</tt> can contain any valid SQL predicate, which
+can include any "and", "or", "not", "like" connective. Surely the presence
+of a "piece of SQL code" is, at first sight, a violation of the basic
+AMNESIA design principle, which aims at hiding any SQL detail to the
+programmer; however this violation is a price we have to pay to let the
+DBMS engine to perform the query: allowing a programmer to specify a
+predicate in the Erlang form (e.g. a <b>"fun"</b>) would have implied to
+transfer the filtering (and query processing) complexity from the SQL/DBMS
+level to the Erlang/AMNESIA one; this is not the aim of the authors, since
+they want only to provide a interface to a DBMS, letting the latter to make
+the proper work of data filtering, query optimization and so on.</p>
+
+<a name="sect_4_2_3" />
+<h4 class="indextitle">4.2.3. Ordering Data and Limiting Results</h4>
+
+<p>The third form of the <tt>fetch</tt> function takes four parameters: in
+addition to the filtering predicate, a fourth parameter is a list of
+options which can be used to specify the <i>ordering criteria</i>
+(corresponding to the "ORDER BY" SQL clause) and the maximum number of data
+records to be returned (corresponding to the "LIMIT" SQL clause). The
+option for the ordering criteria can be specified using one of the
+following expressions:</p>
+
+<ul>
+<li><tt>{order_by, FieldName}</tt>, to make ascending ordering with respect
+to only a single field;</li>
+<li><tt>{order_by, FieldName, desc}</tt>, for descending ordering with
+respect to only a single field;</li>
+<li><tt>{order_by, FieldSpec}</tt>, where <tt>FieldSpec</tt> is a list of
+field names and/or tuples <tt>{FieldName, desc}</tt>; this expression can
+be used in case of multiple ordering criteria.</li>
+</ul>
+
+<p>In the following two examples, we fetch all customers' data ordering by
+<tt>customer_code</tt> in the first example, and by <tt>name</tt>
+(descending) and <tt>customer_code</tt> in the second example. Please note
+the use of the empty tuple "<tt>{}</tt>" in the third parameter of
+<tt>fetch</tt> to indicate that, in our example, we don't want any
+filtering.</p>
+
+<p><pre class="code">
+
+ 10> amnesia:fetch(Pid, customer, {}, [{order_by, customer_code}]).
+ {ok,[#customer{id = 1,
+                customer_code = 102341,
+                name = "John",
+                address = "XXXXX",
+                email = "john@xxx"},
+      #customer{id = 3,
+                customer_code = 102391,
+                name = "Dave",
+                address = "Dave's home",
+                email = "dave@zzz"},
+      #customer{id = 2,
+                customer_code = 394021,
+                name = "Corrado",
+                address = "YYYYYY",
+                email = "corrado@yyy"}]}
+ 11> amnesia:fetch(Pid, customer, {}, [{order_by, [{name, desc}, customer_code]}]).
+ {ok,[#customer{id = 1,
+                customer_code = 102341,
+                name = "John",
+                address = "XXXXX",
+                email = "john@xxx"},
+      #customer{id = 3,
+                customer_code = 102391,
+                name = "Dave",
+                address = "Dave's home",
+                email = "dave@zzz"},
+      #customer{id = 2,
+                customer_code = 394021,
+                name = "Corrado",
+                address = "YYYYYY",
+                email = "corrado@yyy"}]}
+
+</p></pre>
+
+<p>Instead, the option <tt>{limit, N}</tt> or <tt>{limit, Start, N}</tt>
+can be used to limit the number of records returned. For example, to get
+the first two (with respect to the <tt>customer_code</tt>) customers, we
+can use the following statement:</p>
+
+<p><pre class="code">
+
+ 12> amnesia:fetch(Pid, customer, {}, [{order_by, customer_code}, {limit, 2}]).
+ {ok,[#customer{id = 1,
+                customer_code = 102341,
+                name = "John",
+                address = "XXXXX",
+                email = "john@xxx"},
+      #customer{id = 3,
+                customer_code = 102391,
+                name = "Dave",
+                address = "Dave's home",
+                email = "dave@zzz"}]}
+
+</p></pre>
+
+<a name="sect_4_3" />
+<h3 class="indextitle">4.3. Reading linked tables</h3>
+
+<p>It's well known that connections between tables are made through primary
+keys, which, in the case of AMNESIA, are the "ids" of the records. As a
+result, for example, the <tt>#orders</tt> record has a <tt>customer</tt>
+field which contains the "id" of the referred record of the
+<tt>customer</tt> table. This implies that, when retrieving an order, we
+don't know the complete informations about the customer, unless we perform
+an "inner join" or query the <tt>customer</tt> table.</p>
+
+<p>Even if AMNESIA supports joins (inner and outer), an additional way to
+retrieve connected records and resolve external references is provided
+through the <tt>load_referenced</tt> function: by giving a record
+containing a foreign key, this function is able to resolve the reference
+and replace the numeric "id", in the field's record, with the complete
+information related to the connected record. The following example
+clarifies the working scheme of this functionality: in line 13, we fetch
+the order with number = 30, storing it into the variable <tt>Order</tt>,
+its <tt>customer</tt> field contains the number 2; then we pass this
+variable to function <tt>load_referenced/2</tt> (line 14) and we obtain the
+same <tt>#orders</tt> record but with the <tt>customer</tt> field properly
+filled with customer's information.</p>
+
+<p><pre class="code">
+
+ 13> {ok, [Order]} = amnesia:fetch(Pid, orders, {"order_number = 30", []}).
+ {ok,[#orders{id = 1,order_number = 30,order_date = {2008,7,17},customer = 2}]}
+ 14> amnesia:load_referenced(Pid, Order).
+ {ok,#orders{id = 1,
+             order_number = 30,
+             order_date = {2008,7,17},
+             customer = #customer{id = 2,
+                                  customer_code = 394021,
+                                  name = "Corrado",
+                                  address = "YYYYYY",
+                                  email = "corrado@yyy"}}}
+
+</pre></p>
+
+<p>The example has shown how to load data from referring table to referred
+table, but also navigation in the opposite way is possible through function
+<tt>load_referenced</tt>, that is, from a referred record to all records of
+a given table that refer to the first.</p>
+
+<p>As an example, if we want to retrieve all the lines of the order above,
+we can use the following statement:</p>
+
+<p><pre class="code">
+
+ 15> {ok, OrderLines} = amnesia:load_referenced(Pid, Order, order_line).
+ {ok,[#order_line{id = 1,orders = 1,product = 2,quantity = 3},
+      #order_line{id = 2,orders = 1,product = 1,quantity = 10}]}
+
+</pre></p>
+
+<p>And finally, we can retrieve all the details about the products of the
+order by iterating over <tt>OrderLines</tt> and call once again
+<tt>load_referenced/2</tt>:</p>
+
+<p><pre class="code">
+
+ 16> lists:map(fun (X) -> {ok, Data} = amnesia:load_referenced(Pid, X), Data end, OrderLines).
+ [#order_line{id = 1,
+              orders = #orders{id = 1,
+                               order_number = 30,
+                               order_date = {2008,7,17},
+                               customer = 2},
+              product = #product{id = 2,
+                                 product_code = "002",
+                                 description = "Compact Flash 4G",
+                                 price = 57.9000},
+              quantity = 3},
+  #order_line{id = 2,
+              orders = #orders{id = 1,
+                               order_number = 30,
+                               order_date = {2008,7,17},
+                               customer = 2},
+              product = #product{id = 1,
+                                 product_code = "001",
+                                 description = "CPU Intel",
+                                 price = 231.100},
+              quantity = 10}]
+
+</pre></p>
+
+<a name="sect_4_4" />
+<h3 class="indextitle">4.4. Using Joins</h3>
+
+<p>To retrieve connected records, together with the mechanism illustrated
+above, AMNESIA allows programmers to use the classical join operator of the
+relational algebra. Theta-, equi- and all outer-joins are fully supported,
+provided that they are also supported by the interfaced DBMS (by means of
+the proper SQL operators). The following macros, defined in
+<tt>amnesia.hrl</tt>, can be used to include joins in a <tt>fetch</tt>
+function call:</p>
+
+<ul>
+
+  <li><tt>?JOIN</tt>, performs an inner equi-join using the foreign keys
+  connecting the tables (it's a sort of natural join);</li>
+
+  <li><tt>?JOIN_USING(field_name)</tt>, performs an inner equi-join using
+  the provided <tt>field_name</tt>, which must be a common field between
+  the two tables to be joined (equivalent to the SQL operator <tt>INNER
+  JOIN ... USING(<I>FIELD_NAME</I>)</tt>).
+
+  <li><tt>?JOIN_ON(Predicate)</tt>, performs an inner theta-join using
+  the provided <tt>Predicate</tt>, which must be a string conform to the
+  SQL syntax (equivalent to the SQL operator <tt>INNER
+  JOIN ... ON <I>PREDICATE</I></tt>).
+
+  <li><tt>?LEFT_JOIN</tt>, <tt>?LEFT_JOIN_USING(field_name)</tt>,
+  <tt>?LEFT_JOIN_ON(Predicate)</tt>, they perform a left-outer join in a
+  similar way as ablove;</li>
+
+  <li><tt>?RIGHT_JOIN</tt>, <tt>?RIGHT_JOIN_USING(field_name)</tt>,
+  <tt>?RIGHT_JOIN_ON(Predicate)</tt>, they perform a right-outer join;</li>
+
+  <li><tt>?FULL_JOIN</tt>, <tt>?FULL_JOIN_USING(field_name)</tt>,
+  <tt>?FULL_JOIN_ON(Predicate)</tt>, they perform a full-outer join.</li>
+
+</ul>
+
+<p>A join is executed by calling the <tt>fetch</tt> function and
+specifying, as the second parameter, a list such as <tt>[<i>table_1</i>,
+<i>join_operator</i>, <i>table_2</i>]</tt>. The result won't be a list of
+records, as in 4.2, but a list in which each element is, in turn, another
+list of records such as
+<tt>[<i>#record_of_table_1</i>,<i>#record_of_table_2</i>]</tt>.</p>
+
+<p>As an example, to perform a join between <tt>order_line</tt> and
+<tt>product</tt> tables, the following expression can be used:</p>
+
+<p><pre class="code">
+
+ -include("amnesia.hrl").
+
+ ...
+
+ {ok, Data} = amnesia:fetch(Pid, [order_line, ?JOIN, product]),
+
+ ...
+
+</pre></p>
+
+<p>As a result, the <tt>Data</tt> variable will contain the following
+value(s):</p>
+
+<p><pre class="code">
+
+ [[#order_line{id = 2,orders = 1,product = 1,quantity = 10},
+   #product{id = 1,
+            product_code = "001",
+            description = "CPU Intel",
+            price = 231.100}],
+  [#order_line{id = 1,orders = 1,product = 2,quantity = 3},
+   #product{id = 2,
+            product_code = "002",
+            description = "Compact Flash 4G",
+            price = 57.9000}],
+  [#order_line{id = 3,orders = 2,product = 3,quantity = 2},
+   #product{id = 3,
+            product_code = "003",
+            description = "Hard Disk 500G",
+            price = 190.770}],
+  [#order_line{id = 4,orders = 2,product = 4,quantity = 11},
+   #product{id = 4,
+            product_code = "004",
+            description = "Data Server",
+            price = 5200.00}]]
+
+</pre></p>
+
+<p>AMNESIA join operators are associative, meaning that we can write the
+following expression to perform (for example) a join among all tables:</tt>
+
+<p><pre class="code">
+
+ -include("amnesia.hrl").
+
+ ...
+
+ {ok, Data} = amnesia:fetch(Pid, [customer, ?JOIN, orders, ?JOIN, order_line, ?JOIN, product]),
+
+ ...
+
+</pre></p>
+
+<p>In this case, the <tt>Data</tt> variable will contain the following
+value(s):</p>
+
+<p><pre class="code">
+
+[[#customer{id = 2,
+            customer_code = 394021,
+            name = "Corrado",
+            address = "YYYYYY",
+            email = "corrado@yyy"},
+  #orders{id = 1,order_number = 30,order_date = {2008,7,17},customer = 2},
+  #order_line{id = 1,orders = 1,product = 2,quantity = 3},
+  #product{id = 2,
+           product_code = "002",
+           description = "Compact Flash 4G",
+           price = 57.9000}],
+ [#customer{id = 2,
+            customer_code = 394021,
+            name = "Corrado",
+            address = "YYYYYY",
+            email = "corrado@yyy"},
+  #orders{id = 1,order_number = 30,order_date = {2008,7,17},customer = 2},
+  #order_line{id = 2,orders = 1,product = 1,quantity = 10},
+  #product{id = 1,
+           product_code = "001",
+           description = "CPU Intel",
+           price = 231.100}],
+ [#customer{id = 1,
+            customer_code = 102341,
+            name = "John",
+            address = "XXXXX",
+            email = "john@xxx"},
+  #orders{id = 2,order_number = 31,order_date = {2008,7,20},customer = 1},
+  #order_line{id = 3,orders = 2,product = 3,quantity = 2},
+  #product{id = 3,
+           product_code = "003",
+           description = "Hard Disk 500G",
+           price = 190.770}],
+ [#customer{id = 1,
+           customer_code = 102341,
+            name = "John",
+            address = "XXXXX",
+            email = "john@xxx"},
+  #orders{id = 2,order_number = 31,order_date = {2008,7,20},customer = 1},
+  #order_line{id = 4,orders = 2,product = 4,quantity = 11},
+  #product{id = 4,
+           product_code = "004",
+           description = "Data Server",
+           price = 5200.00}]]
+
+</pre></p>
+
+<a name="sect_4_5" />
+<h3 class="indextitle">4.5. Updating and Deleting Data</h3>
+
+<p>To update or delete a data item, AMNESIA offers the functions
+<tt>update/2</tt> and <tt>delete/2</tt>, both receiving the name of the
+database and a record representing the data item to update or delete. Their
+usage is thus quite simple: supposing that you have to update the address of
+customer with code "102341" and that you want to delete the customer with
+code "394021", you can use the following code.</p>
+
+<p><pre class="code">
+
+ ...
+ {ok, [C1]} = amnesia:fetch (Pid, customer, {"customer_code = $1", [102341]}),
+ {ok, [C2]} = amnesia:fetch (Pid, customer, {"customer_code = $1", [394021]}),
+
+ NewC1 = C1#customer { address = "new address" },
+ amnesia:update (Pid, NewC1),  %% update customer 1
+
+ amnesia:delete (Pid, C2),     %% delete customer 2
+ ...
+
+</pre></p>
+
+<a name="sect_4_6" />
+<h3 class="indextitle">4.6. Executing Aggregated Queries</h3>
+
+<p>Selections and joins are not the sole operations usually performed while
+working with databases, queries that use <i>aggregated functions</i>, such
+as <tt>count(*)</tt>, <tt>max(...)</tt>, <tt>sum(...)</tt>, <tt>avg(...)</tt>,
+etc., are also very often present in database applications.
+AMNESIA also supports aggregated queries by means of special parameters
+  given in the fourth argument (options) of the <tt>fetch</tt>
+  function.</p>
+
+<p>Basically, we can distinguish three types of aggregated queries in
+  SQL:</p>
+
+<ol>
+
+  <li>Queries returning a single scalar value obtained by an aggregated
+    function, such as <tt>"SELECT COUNT(*) FROM ORDERS"</tt> (returns the
+    number of orders in the database);</li>
+
+  <li>Queries computing an aggregated function by grouping rows on the
+    basis of a specific field value, i.e. <tt>"SELECT COUNT(*), CUSTOMER.*
+      FROM ORDERS NATURAL JOIN CUSTOMER GROUP BY CUSTOMER_CODE"</tt> (the
+    number of orders for each customer);</li>
+
+  <li>Queries that compute an aggregated function by grouping rows on the
+    basis of a specific field value and apply a selection predicate on the
+    aggregated value, i.e. <tt>"SELECT COUNT(*) AS NUM_ORDERS, CUSTOMER.*
+      FROM ORDERS NATURAL JOIN CUSTOMER GROUP BY CUSTOMER_CODE
+      HAVING NUM_ORDERS > 2"</tt> (all customers with more than 2 orders
+    for each, reporting also the number of orders of the customers).</li>
+
+</ol>
+
+<p>To perform such queries with AMNESIA the <tt>aggregate</tt> option must
+  be given to a <tt>fetch</tt> function call with the following meaning:</p>
+
+<table width="100%" border="1">
+
+<tr><td width="300"><b>Option</b></td>
+    <td><b>Meaning</b></td>
+    <td width="300"><b>Examples</b></td></tr>
+
+<tr>
+  <td><tt>{aggregate, Function, Type}</tt></td>
+  <td>Performs a query of type 1:
+    <ul>
+      <li><tt>Function</tt> is a string reporting the SQL expression of the
+        aggregated function;</li>
+      <li><tt>Type</tt> is the AMNESIA type of the aggregated function
+        result, in accordance with <a href="#sect_A">Appendix A</a>.</li>
+    </ul></td>
+  <td><tt>{aggregate, "count(*)", integer}</tt><br>&nbsp;<br>
+      <tt>{aggregate, "sum(price)", decimal}</tt>
+  </td>
+</tr>
+
+<tr>
+  <td><tt>{aggregate, Function, Type, Grouping}</tt></td>
+  <td>Performs a query of type 2:
+    <ul>
+      <li><tt>Function</tt> is a string reporting the SQL expression of the
+        aggregated function;</li>
+      <li><tt>Type</tt> is the AMNESIA type of the aggregated function
+        result, in accordance with <a href="#sect_A">Appendix A</a>;</li>
+      <li><tt>Grouping</tt> is a field name (or a list of field names) that
+        represents the grouping criteria.</li>
+    </ul>
+  </td>
+  <td><tt>{aggregate, "count(*)", integer, customer_code}</tt><br>&nbsp;<br>
+      <tt>{aggregate, "sum(price)", decimal, product_code}</tt>
+  </td>
+</tr>
+
+<tr>
+  <td><tt>{aggregate, Function, Type, Grouping, {PredicateSpec,
+      ValueList}}</tt></td>
+  <td>Performs a query of type 3:
+    <ul>
+      <li><tt>Function</tt> is a string reporting the SQL expression of the
+        aggregated function;</li>
+      <li><tt>Type</tt> is the AMNESIA type of the aggregated function
+        result, in accordance with <a href="#sect_A">Appendix A</a>;</li>
+      <li><tt>Grouping</tt> is a field name (or a list of field names) that
+represents the grouping criteria;</li>
+      <li><tt>{PredicateSpec, ValueList}</tt> is the filtering predicate
+(the <tt>HAVING</tt> clause) whose representation is the same as
+in <a href="#sect_4_2_2">Sect. 4.2.2</a>. The field containing the result
+of the aggregate function is renamed (in the SQL query)
+as <tt>__aggregated_data__</tt>, so it can be referred with this special
+name.</li>
+    </ul>
+  </td>
+  <td><tt>{aggregate, "count(*)", integer, customer_code,
+      {"__aggregated_data__ > 2", []}}</tt><br>&nbsp;<br>
+      <tt>{aggregate, "sum(price)", decimal, product_code,
+           {"__aggregated_data__ < $1", [1000.0]}}</tt>
+  </td>
+</tr>
+
+</table>
+
+<p>In the following, some examples of aggregated queries are provided, in
+order to let the reader to understand the correct usage of this
+feature.</p>
+
+<p>As a first example, let us suppose we want to obtain the number of
+products present in the database, a query that, in SQL, we write
+as: <tt>"SELECT COUNT(*) FROM PRODUCT".</tt> In AMNESIA, instead, we have
+to call the fetch function as follows:</p>
+
+<p><pre class="code">
+
+ 10> amnesia:fetch(Pid, product, {}, [{aggregate, "count(*)", integer}]).
+ {ok,[4]}
+ 11>
+
+</pre></p>
+
+<p>As the example shows, since the result of such a query is a single
+scalar value, the return data is a list with a single element containing
+the data.</p>
+
+<p>The second example illustrates how to execute a query of type 2; to this
+aim, we want to obtain the total amount of each order stored in the
+database; this is performed by summing the values of <tt>quantity *
+price</tt> present in the <tt>order_line</tt> records of the
+same <tt>order</tt>; obviously, we have to join
+tables <tt>product</tt>, <tt>orders</tt> and <tt>order_lines</tt>. The
+resulting query is:</p>
+
+<p><pre class="code">
+
+  {ok, Data} = amnesia:fetch (Pid, [product, ?JOIN, order_line, ?JOIN, orders], {},
+                              [{aggregate, "sum(quantity * price)", decimal, order_number}]),
+
+</pre></p>
+
+<p>The value of <tt>Data</tt> is a list as in a classical multi-join query.
+Each element is a list containing, as the first element, the scalar value
+resulting from the aggregated function, and then the data records relevant
+to each table specified in the multi-join. The result of the query above is
+ thus the following data:
+</p>
+
+<p><pre class="code">
+
+  [[2484.7,
+    #product{id = 2,product_code = "002",
+             description = "Compact Flash 4G",price = 57.9},
+    #order_line{id = 1,orders = 1,product = 2,quantity = 3},
+    #orders{id = 1,order_number = 30,
+            order_date = {2008,7,17},
+            customer = 2}],
+   [57581.54,
+    #product{id = 3,product_code = "003",
+             description = "Hard Disk 500G",price = 190.77},
+    #order_line{id = 3,orders = 2,product = 3,quantity = 2},
+    #orders{id = 2,order_number = 31,
+            order_date = {2007,7,12},
+            customer = 1}]]
+
+</pre></p>
+
+<p>Obviously, to obtain data according the desired query specification (the
+  total amount for each order) we have to extract only values relevant to
+  the aggregated function and the <tt>#orders</tt> record, i.e.:</p>
+
+<p><pre class="code">
+
+  [ [Total, Order] || [Total, _Product, _OrderLine, Order] <- Data]
+
+</pre></p>
+
+
+<a name="sect_4_7" />
+<h3 class="indextitle">4.7. Using Cursors</h3>
+
+<p>The <tt>fetch</tt> function returns the bunch of data relevant to the
+specified query altogether. Cursors are instead a way to store query
+results and pick one record (or some records) at time; this is the
+case, for example, of applications which display all data not in a single
+page, but in several pages which can be browsed by the user. Cursors, once
+created from the results of a query, are stored in the AMNESIA engine and a
+reference ID is provided which can be then used to navigate the cursor and
+access the data records. Cursors are deleted explicitly by means of
+the <tt>delete_cursor</tt> function call, or automatically garbage
+collected when they are no more used for 30 seconds.</p>
+
+<p>Cursors are created using the <tt>create_cursor/2</tt> function provided
+by AMNESIA, which takes two parameters: the Pid of the AMNESIA process
+representing your database, and the result of a <tt>amnesia:fetch</tt>
+  call; here is an example of creating a cursor for the list of ordered
+  customers:
+</p>
+
+<p><pre class="code">
+
+  {ok, CursorID} = amnesia:create_cursor (Pid, amnesia:fetch(Pid, customer, {}, [{order_by, customer_code}])).
+
+</pre></p>
+
+<p>On success, the <tt>create_cursor<tt> function returns the
+tuple <tt>{ok, CursorID}</tt>, while, in the case of error, the value
+returned is <tt>{error, Reason</tt>. The <tt>CursorID</tt> must be then
+used in order to retrieve data from the created cursor, by using the
+following functions:
+</p>
+
+<p align="center">
+<table border="1">
+  <tr>
+    <td><b>Function</b></td>
+    <td><b>Meaning</b></td>
+    <td><b>Return value</b></td>
+  </tr>
+
+  <tr>
+    <td><tt>next(Pid, CursorID)</tt></td>
+    <td>Returns the next record in the specified cursor</td>
+    <td><tt>{ok, Record} | {end_of_data} | {error, no_cursor}</tt></td>
+  </tr>
+
+  <tr>
+    <td><tt>prev(Pid, CursorID)</tt></td>
+    <td>Returns the previous record in the specified cursor</td>
+    <td><tt>{ok, Record} | {end_of_data} | {error, no_cursor}</tt></td>
+  </tr>
+
+  <tr>
+    <td><tt>nth(Pid, CursorID, RecordNumber)</tt></td>
+    <td>Returns the specified record number in the cursor. First record is
+      referred as "1" (not "0")</td>
+    <td><tt>{ok, Record} | {end_of_data} | {error, no_cursor}</tt></td>
+  </tr>
+
+  <tr>
+    <td><tt>first(Pid, CursorID)</tt></td>
+    <td>Returns the first record in the cursor.</td>
+    <td><tt>{ok, Record} | {end_of_data} | {error, no_cursor}</tt></td>
+  </tr>
+
+  <tr>
+    <td><tt>last(Pid, CursorID)</tt></td>
+    <td>Returns the last record in the cursor.</td>
+    <td><tt>{ok, Record} | {end_of_data} | {error, no_cursor}</tt></td>
+  </tr>
+
+  <tr>
+    <td><tt>index(Pid, CursorID)</tt></td>
+    <td>Returns the number of the current record in the cursor.</td>
+    <td><tt>{ok, RecordNumber} | {end_of_data} | {error, no_cursor}</tt></td>
+  </tr>
+
+  <tr>
+    <td><tt>iterate(Pid, CursorID, Fun)</tt></td>
+    <td>Applies the functor <tt>Fun</tt> to each record of the cursor.</td>
+    <td><tt>ok | {error, no_cursor}</tt></td>
+  </tr>
+
+  <tr>
+    <td><tt>delete_cursor(Pid, CursorID)</tt></td>
+    <td>Deletes the specified cursor</td>
+    <td><tt>ok | {error, no_cursor}</tt></td>
+  </tr>
+
+</table>
+
+</p>
+
+<p>The screenshot below of the erlang shell show how to use some cursor
+related functions. Here we are creating a cursor with customer data; then
+  we scan it until the end; then we seek a specific record, given its
+  number; and then we scan the cursor backwards.
+</p>
+
+<p><pre class="code">
+
+ 26> {ok, Cursor} = amnesia:create_cursor(Pid, amnesia:fetch(Pid, customer)).
+ {ok,1}
+ 27> amnesia:next(Pid, Cursor).
+ {ok,#customer{id = 1,customer_code = 102341,name = "John",
+               address = "XXXXX",email = []}}
+ 28> amnesia:next(Pid, Cursor).
+ {ok,#customer{id = 2,customer_code = 394021,
+               name = "Corrado",address = "YYYYYY",email = "corrado@yyy"}}
+ 29> amnesia:next(Pid, Cursor).
+ {ok,#customer{id = 3,customer_code = 102391,name = "Dave",
+               address = "Dave's home",email = "dave@zzz"}}
+ 30> amnesia:next(Pid, Cursor).
+ {end_of_data}
+ 31> amnesia:nth(Pid, Cursor, 2).
+ {ok,#customer{id = 2,customer_code = 394021,
+               name = "Corrado",address = "YYYYYY",email = "corrado@yyy"}}
+ 32> amnesia:prev(Pid, Cursor).
+ {ok,#customer{id = 1,customer_code = 102341,name = "John",
+               address = "XXXXX",email = []}}
+ 33> amnesia:prev(Pid, Cursor).
+ {end_of_data}
+
+</pre></p>
+
+
+
+<a name="sect_A" />
+<h2 class="indextitle">A. Appendix: Data types and constraints</h2>
+
+<p>As reported in the example in Sect. 3.1, in table specification field
+types and additional constraints (uniqueness, etc.) are expressed using
+special atoms that are interpreted by AMNESIA and translated into proper
+SQL types/constraints. Moreover, as for structured types such as SQL DATE,
+DATETIME or TIME, a proper Erlang representation is provided, which, in the
+majority of cases, conforms to the one provided by Erlang libraries
+handling such kind of data.</p>
+
+<p>The following table summarizes the correspondence between AMNESIA types,
+SQL data types and their relevant Erlang representation:</p>
+
+<p align="center">
+<table border="1">
+  <tr>
+    <td><b>AMNESIA Type</b></td>
+    <td><b>SQL Type</b></td>
+    <td><b>Erlang Type</b></td>
+  </tr>
+
+  <tr>
+    <td>char</td>
+    <td>VARCHAR(1)</td>
+    <td>string()</td>
+  </tr>
+
+
+  <tr>
+    <td>varchar</td>
+    <td>VARCHAR(255)</td>
+    <td>string()</td>
+  </tr>
+
+  <tr>
+    <td>{varchar, N}</td>
+    <td>VARCHAR(N)</td>
+    <td>string()</td>
+  </tr>
+
+  <tr>
+    <td>text</td>
+    <td>TEXT</td>
+    <td>string()</td>
+  </tr>
+
+  <tr>
+    <td>int</td>
+    <td>INTEGER</td>
+    <td>integer()</td>
+  </tr>
+
+  <tr>
+    <td>integer</td>
+    <td>INTEGER</td>
+    <td>integer()</td>
+  </tr>
+
+  <tr>
+    <td>boolean<br>bool</td>
+    <td>BIT(1)</td>
+    <td>boolean atom, with 'true' or 'false' values</td>
+  </tr>
+
+  <tr>
+    <td>decimal</td>
+    <td>DECIMAL</td>
+    <td>float()</td>
+  </tr>
+
+  <tr>
+    <td>{decimal, N, M}</td>
+    <td>DECIMAL (N, M)</td>
+    <td>float()</td>
+  </tr>
+
+  <tr>
+    <td>date</td>
+    <td>DATE</td>
+    <td>{Year, Month, Day}</td>
+  </tr>
+
+  <tr>
+    <td><i>Not yet supported</i></td>
+    <td>TIME</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>datetime</td>
+    <td>DATETIME</td>
+    <td>{{Year, Month, Day}, {HH, MM, SS}}</td>
+  </tr>
+
+</table>
+</p>
+
+
+<p>The following table instead provides the correspondence between AMNESIA
+constraints and SQL ones:</p>
+
+<p align="center">
+<table border="1">
+  <tr>
+    <td><b>AMNESIA</b></td>
+    <td><b>SQL</b></td>
+  </tr>
+
+  <tr>
+    <td>not_null</td>
+    <td>NOT NULL</td>
+  </tr>
+
+
+  <tr>
+    <td>unique</td>
+    <td>UNIQUE</td>
+  </tr>
+
+  <tr>
+    <td>{default, <i>Value</i>}</td>
+    <td>DEFAULT <i>Value</i></td>
+  </tr>
+
+</table>
+</p>
+
+
+<hr>
+<div class="navbar"><a name="#navbar_bottom"></a>
+<table width="100%" border="0" cellspacing="0"
+       cellpadding="2" summary="navigation bar">
+<tr><td>
+<a href="../reference_manual/index.html">Reference Manual</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+</body>
+</html>

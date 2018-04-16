@@ -1,0 +1,51 @@
+//$$begin_code_define
+//{ms_map_enter, 	  11000}
+//{mc_map_enter, 	  11000}
+//{mc_map_leave, 	  11001}
+//{ms_map_jump,  	  11002}
+//{mc_map_jump,  	  11002}
+//{ms_map_move,  	  11003}
+//{mc_map_move,  	  11003}
+//{ms_map_move_check, 11004}
+//$$end_code_define
+
+// ========== 进入地图
+message ms_map_enter{
+	option int32 map_id  = 1; 	
+}
+message mc_map_enter{
+	repeated r_cell_role roles = 1;	//进入视野的玩家
+	repeated r_cell_role npcs  = 2;	//进入视野的npc
+}
+
+// ========== 离开地图的广播
+message mc_map_leave{
+	repeated int32 roles = 1;	//离开视野的玩家
+	repeated int32 npcs  = 2;	//离开视野的npc
+}
+
+// ========== 通过传送点跳转
+message ms_map_jump{
+	option int32 dest_map_id  = 1; //目的地地图	
+}
+message mc_map_jump{
+	option int32 dest_map_id = 1; //目的地地图	
+	option int32 dest_x      = 2; //目的地x坐标	
+	option int32 dest_y      = 3; //目的地y坐标	
+}
+
+// ========== 移动路径
+message ms_map_move{
+	repeated int32 path    = 1;	//[x1, y1, x2, y2...]
+}
+message mc_map_move{
+	option int32 object_type = 1; //对象类型
+	option int32 object_id   = 2; //对象id
+	repeated int32 path      = 3;	//[x1, y1, x2, y2...]
+}
+
+// ========== 移动一点的check
+message ms_map_move_check{
+	option int32 x = 1; //目前到达的x坐标
+	option int32 y = 2; //目前到达的y坐标
+}

@@ -1,0 +1,32 @@
+2016-03-28 09:42:06 =CRASH REPORT====
+  crasher:
+    initial call: mysql:init/1
+    pid: <0.114.0>
+    registered_name: []
+    exception exit: {{error,connect_failed},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,322}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]}
+    ancestors: [gerl_cache_sup,<0.110.0>]
+    messages: []
+    links: [<0.111.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 596
+  neighbours:
+2016-03-28 09:42:06 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.109.0>
+    registered_name: []
+    exception exit: {{bad_return,{{gerl_cache_app,start,[normal,[]]},{'EXIT',{{badmatch,{error,{{error,connect_failed},{child,undefined,mysql,{mysql,start_link,[gerl_mysql_conn,"127.0.0.1",3306,"root","123456","gerl_db1",#Fun<gerl_cache_app.1.91564333>]},permanent,10000,worker,[mysql]}}}},[{gerl_cache_sup,start_child,1,[{file,"src/cache/gerl_cache_sup.erl"},{line,22}]},{gerl_cache_app,start_mysql,0,[{file,"src/cache/gerl_cache_app.erl"},{line,36}]},{gerl_cache_app,start,2,[{file,"src/cache/gerl_cache_app.erl"},{line,16}]},{application_master,start_it_old,4,[{file,"application_master.erl"},{line,272}]}]}}}},[{application_master,init,4,[{file,"application_master.erl"},{line,133}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]}
+    ancestors: [<0.108.0>]
+    messages: [{'EXIT',<0.110.0>,normal}]
+    links: [<0.108.0>,<0.7.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 140
+  neighbours:

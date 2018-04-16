@@ -1,0 +1,2 @@
+map_srv:debug(10000, fun() -> role_dict_tmp:get(1, r_pos) end).
+map_srv:debug(10000, fun() -> map_dict:get_role_cell_rec(1) end).

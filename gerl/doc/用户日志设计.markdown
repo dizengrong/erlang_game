@@ -1,0 +1,8 @@
+用户日志设计
+=====
+
+* 用户日志各个表通过db_table_user_log.erl来定义
+* 用户日志记录有一个全局进程：user_log_srv.erl
+* 日志记录有一个utility模块：util_user_log.erl，它负责将数据打包并传递给user_log_srv
+* 日志记录有一个配置文件：cfg_user_log，LogType与其描述对应起来
+* 数据管理后台我准备使用Django来做，安装Django的django-xadmin模块，它可以很方便的管理数据

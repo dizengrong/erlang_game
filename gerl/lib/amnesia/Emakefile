@@ -1,0 +1,10 @@
+{ 
+	["src/*", "src/*/*", "src/*/*/*"], 
+	[	
+		{i, "include" }, 
+		{outdir, "ebin"},
+		report,
+		% warnings_as_errors,
+		verbose
+	  ]
+}.

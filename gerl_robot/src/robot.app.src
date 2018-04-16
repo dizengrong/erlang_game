@@ -1,0 +1,18 @@
+{application, robot,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { robot_app, []}},
+  {env, [
+  	{robot_number, 1},
+    {ip, "127.0.0.1"}, %% 我本地
+    {port, 5555},
+  	{action, action_kill_dragon},
+  	{account_prefix, "robot_"}
+  ]}
+ ]}.

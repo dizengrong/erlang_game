@@ -1,0 +1,10 @@
+2016-03-28 09:42:04.078 [info] <0.7.0> Application lager started on node 'gerl1_1@127.0.0.1'
+2016-03-28 09:42:04.209 [error] <0.64.0>@lager_handler_watcher:98 Lager fatally failed to install handler lager_console_backend into lager_event, NOT retrying: old_shell
+2016-03-28 09:42:04.209 [warning] <0.59.0>@lager_console_backend:64 Lager's console backend is incompatible with the 'old' shell, not enabling it
+2016-03-28 09:42:04.394 [info] <0.7.0> Application ranch started on node 'gerl1_1@127.0.0.1'
+2016-03-28 09:42:04.694 [info] <0.7.0> Application gerl_gateway started on node 'gerl1_1@127.0.0.1'
+2016-03-28 09:42:04.809 [info] <0.7.0> Application gerl_chat started on node 'gerl1_1@127.0.0.1'
+2016-03-28 09:42:05.009 [info] <0.7.0> Application crypto started on node 'gerl1_1@127.0.0.1'
+2016-03-28 09:42:06.125 [error] <0.116.0>@gerl_cache_app:start_mysql:31 mysql_recv: Failed connecting to "127.0.0.1":3306 : {error,econnrefused}
+2016-03-28 09:42:06.125 [error] <0.115.0>@gerl_cache_app:start_mysql:31 mysql_conn: Failed connecting to "127.0.0.1":3306 : {error,"connect failed : {error,econnrefused}"}
+2016-03-28 09:42:06.125 [error] <0.114.0>@gerl_cache_app:start_mysql:31 mysql: Failed starting first MySQL connection handler, exiting

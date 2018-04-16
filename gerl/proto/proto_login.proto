@@ -1,0 +1,36 @@
+//$$begin_code_define 消息号定义(上行和下行为同一个消息号)，请保持这种格式不要改变
+//{ms_login, 10000}
+//{mc_login, 10000}
+//{ms_register, 10001}
+//{mc_register, 10001}
+//{ms_enter_game, 10002}
+//{mc_enter_game, 10002}
+//$$end_code_define
+
+// ========== 登陆
+message ms_login {
+	option string account_name = 1;	// 账号名
+}
+message mc_login {
+	option int32 ret_code = 1[default=0]; 	// 0:成功, 1:未注册
+	option int32 role_id  = 2; 	
+}
+// ========== 注册
+message ms_register {
+	option int32 hero_id   = 1;	// 选择的英雄
+	option int32 role_name = 1;	// 注册的角色名
+}
+message mc_register {
+	option int32 ret_code = 1[default=0]; 	// 0:成功, 1:账号已存在, 2:角色名已存在, 3:服务器发生错误了
+	option int32 role_id  = 2; 	
+}
+// ========== 进入游戏
+message ms_enter_game {
+	option int32 role_id   = 1;	
+}
+message mc_enter_game {
+	option int32 role_id = 1;	
+	option int32 map_id  = 2;	// 玩家位置信息
+	option int32 x       = 3;	
+	option int32 y       = 4;	
+}
